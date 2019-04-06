@@ -10,14 +10,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="student")
+@Table(name = "student")
 public class Student {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "emailId")
+	@Column(name = "emailId", unique = true, columnDefinition = "VARCHAR(64)")
 	private String emailId;
-	
+
 	@Column(name = "studentFirstName")
 	private String studentFirstName;
 
@@ -25,7 +24,7 @@ public class Student {
 	private String studentLastName;
 
 	@Column(name = "studentContact")
-	private int studentContact;
+	private String studentContact;
 
 	@Column(name = "studentGender")
 	private String studentGender;
@@ -50,9 +49,17 @@ public class Student {
 
 	@Column(name = "state")
 	private String state;
-	
+
 	@Column(name = "pincode")
 	private String pincode;
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
 
 	@Column(name = "country")
 	private String country;
@@ -131,11 +138,11 @@ public class Student {
 		this.studentFirstName = studentFirstName;
 	}
 
-	public int getStudentContact() {
+	public String getStudentContact() {
 		return studentContact;
 	}
 
-	public void setStudentContact(int studentContact) {
+	public void setStudentContact(String studentContact) {
 		this.studentContact = studentContact;
 	}
 
@@ -187,5 +194,5 @@ public class Student {
 				+ studentCourseEnroll + ", address=" + address + ", city=" + city + ", pincode=" + pincode
 				+ ", country=" + country + ", password=" + password + "]";
 	}
-	
+
 }

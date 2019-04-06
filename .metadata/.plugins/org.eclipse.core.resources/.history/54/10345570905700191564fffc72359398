@@ -1,0 +1,8 @@
+package com.niit.app.dao;
+
+
+
+public interface StudentDAO {
+
+	
+}

@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernatemapping SYSTEM "http://hibernate.sourceforge.net/hibernatemapping3.0.dtd"
+ PUBLIC "//Hibernate/Hibernate Mapping DTD 3.0//EN">
+<! Generated Mar 26, 2019 12:10:23 AM by Hibernate Tools 3.5.0.Final >
+<hibernatemapping>
+	<class table="STUDENT" name="com.niit.HiberAnnotations.Student">
+		<id name="emailId" type="int">
+			<column name="EMAILid" />
+			<generator class="assigned" />
+		</id>
+		<property name="studentFirstName" type="java.lang.String"
+			length="20">
+			<column name="STUDENTFIRSTNAME" />
+		</property>
+		<property name="studentLastName" type="java.lang.String"
+			length="20">
+			<column name="STUDENTLASTNAME" />
+		</property>
+		<property name="studentContact" type="int"
+			length="20">
+			<column name="STUDENTCONTACT" />
+		</property>
+		<property name="studentGender" type="int"
+			length="20">
+			<column name="STUDENTGENDER" />
+		</property>
+		<property name="studentMotherName" type="int"
+			length="20">
+			<column name="STUDENTMOTHERNAME" />
+		</property>
+		<property name="studentFatherName" type="int"
+			length="20">
+			<column name="STUDENTFATHERNAME" />
+		</property>
+		<property name="dob" type="int"
+			length="20">
+			<column name="DOB" />
+		</property>
+		<property name="studentCourseEnroll" type="int"
+			length="20">
+			<column name="STUDENTCOURSENROLL" />
+		</property>
+		<property name="address" type="int"
+			length="20">
+			<column name="ADDRESS" />
+		</property>
+		<property name="city" type="int"
+			length="20">
+			<column name="CITY" />
+		</property>
+		<property name="state" type="int"
+			length="20">
+			<column name="STATE" />
+		</property>
+		<property name="pincode" type="int"
+			length="20">
+			<column name="PINCODE" />
+		</property>
+		<property name="country" type="int"
+			length="20">
+			<column name="COUNTRY" />
+		</property>
+		<property name="password" type="int"
+			length="20">
+			<column name="PASSWORD" />
+		</property>
+	</class>
+</hibernatemapping>

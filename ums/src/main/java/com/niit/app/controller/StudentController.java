@@ -7,8 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.niit.app.model.Student;
@@ -35,14 +35,14 @@ public class StudentController {
 		return "student-form";
 	}
 	
-	@PostMapping("/saveStudent")
+	@RequestMapping(value="/saveStudent",method = RequestMethod.POST)
 	public String saveCustomer(@ModelAttribute("student") Student student) {
 		studentService.saveStudent(student);	
 		return "redirect:/student/list";
 	}
 	
 	@GetMapping("/updateForm")
-	public String showFormForUpdate(@RequestParam("emailID") String emailId,
+	public String showFormForUpdate(@RequestParam("emailId") String emailId,
 									Model theModel) {
 		Student student = studentService.getStudent(emailId);	
 		theModel.addAttribute("student", student);

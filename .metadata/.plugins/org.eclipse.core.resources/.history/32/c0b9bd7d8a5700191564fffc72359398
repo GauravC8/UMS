@@ -1,0 +1,7 @@
+package dao;
+
+import com.niit.model.Student;
+public class FacultyDAO {
+
+	public void viewStudent();
+}

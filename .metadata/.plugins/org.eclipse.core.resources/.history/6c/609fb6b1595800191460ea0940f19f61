@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernatemapping
+ SYSTEM "http://hibernate.sourceforge.net/hibernatemapping3.0.dtd"
+ PUBLIC "//Hibernate/Hibernate Mapping DTD 3.0//EN">
+<! Generated Mar 26, 2019 12:10:23 AM by Hibernate Tools 3.5.0.Final >
+<hibernatemapping>
+	<class table="STUDENT" name="com.niit.HiberAnnotations.Student">
+		<id name="emailId" type="int">
+			<column name="EMAILid" />
+			<generator class="assigned" />
+		</id>
+		<property name="studentFirstName" type="java.lang.String"
+			length="20">
+			<column name="STUDENTFIRSTNAME" />
+		</property>
+		<property name="studentLastName" type="java.lang.String"
+			length="20">
+			<column name="STUDENTLASTNAME" />
+		</property>
+		<property name="marks" type="int">
+			<column name="MARKS" />
+		</property>
+	</class>
+</hibernatemapping>

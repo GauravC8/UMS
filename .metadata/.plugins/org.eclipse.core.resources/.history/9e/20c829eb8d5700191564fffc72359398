@@ -1,0 +1,13 @@
+package com.niit.app.service;
+
+import java.util.List;
+
+public interface StudentService {
+	public List <Student> getCustomers();
+	
+	public void saveCustomer(Student theCustomer);
+	public Student getCustomer(String emailId);
+	public void deleteCustomer(String emailId);
+	
+
+}

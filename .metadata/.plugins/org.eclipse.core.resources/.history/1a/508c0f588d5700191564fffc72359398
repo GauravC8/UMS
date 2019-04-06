@@ -1,0 +1,7 @@
+package com.niit.app.controller;
+
+@Controller
+@RequestMapping("/student")
+public class StudentController {
+
+}

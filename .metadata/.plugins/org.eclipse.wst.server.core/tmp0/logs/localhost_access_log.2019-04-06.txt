@@ -1,0 +1,12 @@
+127.0.0.1 - - [06/Apr/2019:15:06:55 +0530] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [06/Apr/2019:15:06:58 +0530] "GET /ums/ HTTP/1.1" 200 13384
+0:0:0:0:0:0:0:1 - - [06/Apr/2019:15:06:58 +0530] "GET /ums/resources/images/logo.png HTTP/1.1" 404 1047
+0:0:0:0:0:0:0:1 - - [06/Apr/2019:15:06:58 +0530] "GET /ums/resources/js/bootstrap.min.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [06/Apr/2019:15:06:58 +0530] "GET /ums/resources/js/validator.min.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [06/Apr/2019:15:06:58 +0530] "GET /ums/resources/js/jquery-2.1.4.min.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [06/Apr/2019:15:07:51 +0530] "POST /ums/student/saveStudent HTTP/1.1" 500 13907
+127.0.0.1 - - [06/Apr/2019:15:27:53 +0530] "GET / HTTP/1.1" 404 1074
+127.0.0.1 - - [06/Apr/2019:15:27:53 +0530] "GET /ums/ HTTP/1.1" 200 13384
+127.0.0.1 - - [06/Apr/2019:15:27:53 +0530] "GET /ums/resources/images/logo.png HTTP/1.1" 404 1047
+127.0.0.1 - - [06/Apr/2019:15:27:54 +0530] "GET /ums/ HTTP/1.1" 200 13384
+127.0.0.1 - - [06/Apr/2019:15:27:54 +0530] "GET /ums/resources/images/logo.png HTTP/1.1" 404 1047

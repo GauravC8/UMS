@@ -71,7 +71,6 @@ INDEX VERSION 1.131+D:\UMS\.metadata\.plugins\org.eclipse.jdt.core
 656842651.index
 54290364.index
 866495595.index
-3959091409.index
 3180609149.index
 4209388569.index
 167829306.index

@@ -1,0 +1,7 @@
+1554542113853	Move 'include.jsp' to 'WEB-INF'
+1554544009271	Move 'include.jsp' to 'views'
+1554544012156	Move 'Login.jsp' to 'views'
+1554544013640	Move 'web.xml' to 'views'
+1554544032012	Move 'web.xml' to 'WEB-INF'
+1554544363092	Delete element
+1554544405498	Move 'springWeb.xml' to 'WEB-INF'

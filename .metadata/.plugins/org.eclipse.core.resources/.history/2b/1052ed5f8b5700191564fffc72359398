@@ -1,0 +1,8 @@
+package dao;
+
+import model.Student;
+public class FacultyDAO {
+
+	public void viewStudent();
+	
+}

@@ -1,0 +1,16 @@
+package com.niit.app.service;
+
+import java.util.List;
+
+import com.niit.app.model.*;
+import com.niit.app.service.*;
+
+public interface StudentService {
+
+	Student getStudent(String emailId);
+
+	List<com.niit.app.service.Student> getStudents();
+
+	
+
+}
