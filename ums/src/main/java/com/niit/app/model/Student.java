@@ -3,22 +3,26 @@ package com.niit.app.model;
 import java.sql.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="student")
 public class Student {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "emailId")
 	private String emailId;
+	
+	@Column(name = "studentFirstName")
+	private String studentFirstName;
 
 	@Column(name = "studentLastName")
 	private String studentLastName;
-
-	@Column(name = "studentFirstName")
-	private String studentFirstName;
 
 	@Column(name = "studentContact")
 	private int studentContact;
@@ -35,8 +39,67 @@ public class Student {
 	@Column(name = "dob")
 	private Date dob;
 
+	@Column(name = "studentCourseEnroll")
+	private String studentCourseEnroll;
+
+	@Column(name = "address")
+	private String address;
+
+	@Column(name = "city")
+	private String city;
+
+	@Column(name = "state")
+	private String state;
+	
+	@Column(name = "pincode")
+	private String pincode;
+
+	@Column(name = "country")
+	private String country;
+
 	@Column(name = "password")
 	private String password;
+
+	public String getStudentCourseEnroll() {
+		return studentCourseEnroll;
+	}
+
+	public void setStudentCourseEnroll(String studentCourseEnroll) {
+		this.studentCourseEnroll = studentCourseEnroll;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getPincode() {
+		return pincode;
+	}
+
+	public void setPincode(String pincode) {
+		this.pincode = pincode;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
 	/*
 	 * private String street; private String city; private String state; private
 	 * String country; private int pincode;
@@ -111,17 +174,18 @@ public class Student {
 	public String getPassword() {
 		return password;
 	}
-	
-
-	@Override
-	public String toString() {
-		return "Student [emailId=" + emailId + ", studentLastName=" + studentLastName + ", studentFirstName="
-				+ studentFirstName + ", studentContact=" + studentContact + ", studentGender=" + studentGender
-				+ ", studentMotherName=" + studentMotherName + ", studentFatherName=" + studentFatherName + ", dob="
-				+ dob + ", password=" + password + "]";
-	}
 
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	@Override
+	public String toString() {
+		return "Student [emailId=" + emailId + ", studentLastName=" + studentLastName + ", studentContact="
+				+ studentContact + ", studentGender=" + studentGender + ", studentMotherName=" + studentMotherName
+				+ ", studentFatherName=" + studentFatherName + ", dob=" + dob + ", studentCourseEnroll="
+				+ studentCourseEnroll + ", address=" + address + ", city=" + city + ", pincode=" + pincode
+				+ ", country=" + country + ", password=" + password + "]";
+	}
+	
 }
