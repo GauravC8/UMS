@@ -2,380 +2,411 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta charset="ISO-8859-1">
-<title>University Management System</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet"
-	href="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UMS</title>
 
-
-
-<script>
-	addEventListener("load", function() {
-		setTimeout(hideURLbar, 0);
-	}, false);
-
-	function hideURLbar() {
-		window.scrollTo(0, 1);
-	}
-</script>
-<script src="<c:url value="/resources/js/jquery-2.1.4.min.js" />"></script>
-<script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
-<script src="<c:url value="/resources/js/validator.min.js" />"></script>
+<link rel="stylesheet" type="text/css"
+	href="https://fonts.googleapis.com/css?family=Open+Sans|Candal|Alegreya+Sans">
+<link rel="stylesheet" type="text/css"
+	href="resources/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css"
+	href="resources/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+	href="resources/css/imagehover.min.css">
+<link rel="stylesheet" type="text/css" href="resources/css/style.css">
 
 </head>
+
 <body>
-	<div class="jumbotron jumbotron-fluid">
+	<!--Navigation bar-->
+	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
-			<!-- Navigation bar -->
-
-			<nav class="navbar navbar-inverse">
-				<div class="container-fluid">
-					<div class="navbar-header">
-
-						<a class="navbar-brand" href="#"> <img
-							src="<c:url value="/resources/images/logo.png"/>" height="50"
-							width="50" /></a>
-					</div>
-					<div class="collapse navbar-collapse" id="myNavbar">
-						<ul class="nav navbar-nav">
-							<li class="active"><a href="#">Home</a></li>
-							<li class="dropdown"><a class="dropdown-toggle"
-								data-toggle="dropdown" href="#">UMS Navigation <span
-									class="caret"></span></a>
-								<ul class="dropdown-menu">
-									<li><a href="#">My Profile</a></li>
-									<li><a href="#">Examination</a></li>
-									<li><a href="#">View Result</a></li>
-									<li><a href="#">View Attendance</a></li>
-									<li><a href="#">View Timetable</a></li>
-									<li><a href="#">Assignment Upload</a></li>
-									<li><a href="#">Assignment Download</a></li>
-									<li><a href="#">Online Survey</a></li>
-								</ul></li>
-							<li><a href="#" data-toggle="modal" data-target="#myModal">Change
-									Password</a></li>
-						</ul>
-						<ul class="nav navbar-nav navbar-right">
-
-							<li><a href="#"><span
-									class="glyphicon glyphicon-log-out"></span>Logout</a></li>
-						</ul>
-					</div>
-
-					<!-- Modal -->
-					<div class="modal fade" id="myModal" role="dialog">
-						<div class="modal-dialog">
-
-							<!-- Modal content-->
-							<div class="modal-content">
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal">&times;</button>
-									<h4 class="modal-title">Change Password</h4>
-								</div>
-								<div class="modal-body">
-									<form action="#">
-										<div class="form-group">
-											<label for="email">Old Password</label> <input type="email"
-												class="form-control" id="email">
-										</div>
-										<div class="form-group">
-											<label for="pwd">New Password:</label> <input type="password"
-												class="form-control" id="pwd">
-										</div>
-										<div class="form-group">
-											<label for="pwd">Confirm Password:</label> <input
-												type="password" class="form-control" id="pwd">
-										</div>
-										<button type="submit" class="btn btn-default">Submit</button>
-									</form>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-default"
-										data-dismiss="modal">Close</button>
-								</div>
-							</div>
-
-						</div>
-					</div>
-				</div>
-			</nav>
-
-			<br>
-
-			<div class="row mt-5">
-				<div class="col-lg-3 ">
-
-					<div class="container">
-						<div class="row  bg-primary">
-							<div class="col-sm-6 col-md-4 ">
-								<img
-									src="file:///D:/Project/UMS/WebContent/images/prfile_user.png"
-									alt="" class="img-rounded img-responsive" />
-
-
-							</div>
-							<div class="col-sm-6 col-md-8">
-								<h4>Anita Kri</h4>
-								<small><cite title="San Francisco, USA">NIIT
-										Technologies , Delhi<i class="glyphicon glyphicon-map-marker">
-									</i>
-								</cite></small>
-								<p>
-									<i class="glyphicon glyphicon-gift"></i>Jan 1, 1999
-								</p>
-							</div>
-
-						</div>
-						<br>
-						<div class="form-group">
-							<label for="rollno">Roll No.:</label>
-							<p>Insert roll no</p>
-						</div>
-						<div class="form-group">
-							<label for="pgm">Program:</label>
-							<p>Insert program</p>
-						</div>
-
-						<div class="form-group">
-							<label for="scn">Section:</label>
-							<p>Insert roll no</p>
-						</div>
-					</div>
-				</div>
-
-
-				<div class="col-lg-9">
-					<table class="table table-aqua">
-
-						<tr>
-
-							<th scope="col">Time</th>
-							<th scope="col">Course</th>
-							<th scope="col">Room No.</th>
-						</tr>
-
-
-
-						<tbody class="table table-aqua">
-							<tr>
-
-								<td>Mark</td>
-								<td>Otto</td>
-								<td>@mdo</td>
-							</tr>
-							<tr>
-
-								<td>Jacob</td>
-								<td>Thornton</td>
-								<td>@fat</td>
-							</tr>
-							<tr>
-
-								<td>Larry</td>
-								<td>the Bird</td>
-								<td>@twitter</td>
-							</tr>
-						</tbody>
-					</table>
-					<a href="#" data-toggle="modal" data-target="#registerModel">Register
-						A Student</a> \
-					<!--Register Modal -->
-					<div class="modal fade" id="registerModel" role="dialog">
-						<div class="modal-dialog">
-
-							<!-- Modal content-->
-							<div class="modal-content">
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal">&times;</button>
-									<h4 class="modal-title">Student Registration</h4>
-								</div>
-								<div class="modal-body">
-									<form action="student/saveStudent" method="post"
-										modelAttribute="Student" data-toggle="validator">
-										<div class="form-group">
-											<label for="studentFirstName" class="control-label">First
-												First Name:</label> <input type="text" class="form-control"
-												id="studentFirstName" name="studentFirstName" placeholder="First Name"
-												data-error="Enter First Name" required>
-											<div class="help-block with-errors"></div>
-										</div>
-										<div class="form-group">
-											<label for="studentLastName" class="control-label">
-												Last Name:</label> <input type="text" class="form-control"
-												id="studentLastName" name="studentLastName"placeholder="Last Name"
-												data-error="Enter Last Name" required>
-											<div class="help-block with-errors"></div>
-										</div>
-										<div class="form-group w3ls-opt">
-											<label for="studentGender" class="control-label">Gender</label>
-											<label class="w3layouts"> <input type="radio"
-												name="studentGender" id="studentGender" name="studentGender" value="male" checked>Male
-											</label> <label class="w3layouts label2"> <input type="radio"
-												name="studentGender" id="studentGender" name="studentGender" value="female">Female
-											</label>
-										</div>
-										<div class="form-group">
-											<label for="emailId" class="control-label">Email:</label>
-											<input type="email" class="form-control" id="emailId" name="emailId"
-												placeholder="Email"
-												data-error="This email address is invalid" required>
-											<div class="help-block with-errors"></div>
-										</div>
-										<div class="form-group">
-											<label for="studentContact" class="control-label">studentContact:</label>
-											<input type="text" class="form-control" id="studentContact" name="studentContact"
-												placeholder="studentContact" data-error="Enter Phone Number"
-												required>
-											<div class="help-block with-errors"></div>
-										</div>
-										<div class="form-group">
-											<label for="studentFatherName" class="control-label">Father's
-												Name:</label> <input type="text" class="form-control"
-												id="studentFatherName" name="studentFatherName" placeholder="Father's Name"
-												data-error="Enter Father's Name" required>
-											<div class="help-block with-errors"></div>
-										</div>
-										<div class="form-group">
-											<label for="studentMotherName" class="control-label">Mother's
-												Name:</label> <input type="text" class="form-control"
-												id="studentMotherName" name="studentMotherName" placeholder="Mother's Name"
-												data-error="Enter Mother's Name" required>
-											<div class="help-block with-errors"></div>
-										</div>
-										<div class="form-group">
-											<label for="dob" class="control-label">Date of Birth:</label>
-											<input type="date" class="form-control" id="dob" name="dob"
-												placeholder="date" data-error="Enter Date of Birth" required>
-											<div class="help-block with-errors"></div>
-										</div>
-										<div class="form-group">
-											<label class="control-label" for="studentCourseEnroll">Select
-												Course Enrolled in:</label> <select class="form-control"
-												id="studentCourseEnroll" name="studentCourseEnroll">
-												<option>B.B.A</option>
-												<option>B.C.A</option>
-												<option>B.Com</option>
-												<option>B.Tech</option>
-												<option>M.B.A</option>
-												<option>M.C.A</option>
-												<option>M.Com</option>
-												<option>M.Tech</option>
-
-											</select>
-										</div>
-										<div class="form-group">
-											<label for="address">Address:</label>
-											<textarea class="form-control" rows="3" id="address" name=""></textarea>
-										</div>
-										<div class="form-group">
-											<div class="col-md-6 mb-3">
-												<label for="city" class="control-label">City:</label> <input
-													type="text" class="form-control" id="city" name="city"
-													placeholder="City" data-error="Enter correct city" required>
-												<div class="help-block with-errors"></div>
-											</div>
-										</div>
-										<div class="form-group">
-											<div class="col-md-6 mb-3">
-												<label for="state" class="control-label">State:</label> <input
-													type="text" class="form-control" id="state" name="state"
-													placeholder="State" data-error="Enter correct state"
-													required>
-												<div class="help-block with-errors"></div>
-											</div>
-										</div>
-										<div class="form-group">
-											<div class="col-md-6 mb-3">
-												<label for="pincode" class="control-label">PinCode:</label>
-												<input type="text" class="form-control" id="pincode" name="pincode"
-													placeholder="PinCode" data-error="Enter correct pincode"
-													required>
-												<div class="help-block with-errors"></div>
-											</div>
-										</div>
-										<div class="form-group">
-											<div class="col-md-6 mb-3">
-												<label for="country" class="control-label">Country :</label>
-												<input type="text" class="form-control" id="country" name="country"
-													placeholder="Country" required>
-												<div class="help-block with-errors"></div>
-											</div>
-										</div>
-
-										<div class="form-group">
-											<label for="password" class="control-label">Password:</label>
-											<div class="form-inline row">
-												<div class="form-group col-sm-6 agileits-w3layouts">
-													<input type="password" data-minlength="6"
-														class="form-control" id="password" name="password" placeholder="Password"
-														required>
-													<div class="help-block">Minimum of 6 characters</div>
-												</div>
-												<div class="form-group col-sm-6 w3-agile">
-													<input type="password" class="form-control"
-														id="inputPasswordConfirm"  data-match="#password"
-														data-match-error="Whoops, these don't match"
-														placeholder="Confirm Password" required>
-													<div class="help-block with-errors"></div>
-												</div>
-											</div>
-										</div>
-
-										<div class="form-group">
-											<button type="submit" class="btn btn-lg">submit</button>
-										</div>
-									</form>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-default"
-										data-dismiss="modal">Close</button>
-								</div>
-							</div>
-
-						</div>
-					</div>
-					<a href="student/list">View Student Details</a>
-				</div>
-
-
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar"></button>
+				<a class="navbar-brand" href="index.html">Jubi<span>lant</span></a>
 			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="btn-trial"><a href="#Home">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#programmes">Programmes</a></li>
+					<li><a href="#infrasturcture">Infrastructure</a></li>
+					<li>
+						<div class="dropdown">
+							<button class="btn btn-default dropdown-toggle form-control"
+								type="button" id="menu1" data-toggle="dropdown">
+								Login As: <span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+								<li role="presentation"><a role="menuitem" tabindex="-1"
+									href="user/loginForm">Student</a></li>
+								<li role="presentation"><a role="menuitem" tabindex="-1"
+									href="user/loginForm">Faculty</a></li>
+								<li role="presentation"><a role="menuitem" tabindex="-1"
+									href="user/loginForm">Admin</a></li>
+							</ul>
+						</div>
+					</li>
 
-			<div class=" container text-center bg-dark">
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!--/ Navigation bar-->
 
-				<p class="p-4 bg-dark text-white">
-					©2019 Copyright: <a href="#">UmsManagementsystem.com</a>
-				</p>
+
+	<!--Modal box-->
+	<div class="modal fade" id="login" role="dialog">
+		<div class="modal-dialog modal-sm">
+
+			<!-- Modal content no 1-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title text-center form-title">Login</h4>
+				</div>
+				<div class="modal-body">
+
+					<div class="login-box-body">
+						<%-- <form:form action="user/loginUser" class="form-horizontal"
+							method="post" modelAttribute="user">
+							<div class="form-group">
+								<label for="emailId" class="col-md-3 control-label">Email</label>
+								<div class="col-md-9">
+									<form:input name="emailId" path="emailId"
+										cssClass="form-control" />
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="password" class="col-md-3 control-label">Password</label>
+								<div class="col-md-9">
+									<form:password name="password" path="password"
+										cssClass="form-control" />
+								</div>
+							</div>
+							<div class="form-group">
+								<!-- Button -->
+								<div class="col-md-offset-3 col-md-9">
+									<form:button cssClass="btn btn-primary">Login</form:button>
+								</div>
+							</div>
+							<div style="color: red">${error}</div>
+
+						</form:form> --%>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!--/ Modal box-->
+
+
+	<!--Banner-->
+	<div class="banner"
+		style="background: url('resources/images/bg-banner.jpg') no-repeat center top">
+		<div class="bg-color">
+			<div class="container">
+				<div class="row">
+					<div class="banner-text text-center">
+						<div class="text-border">
+							<h2 class="text-dec">Dream & Fulfill</h2>
+						</div>
+						<div class="intro-para text-center quote">
+							<p class="big-text">Follow your dreams, &nbsp they know the
+								way.<p><p class="small-t
+							ext">Jubilant sets the benchmark of the
+								global education with a system that matches the best of
+								practices, theories, resources and standards all over the WORLD.</p>
+						</div>
+
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-		crossorigin="anonymous"></script>
+	<!--/ Banner-->
+	<!--About-->
+	<section id="about" class="section-padding">
+		<div class="container">
+			<div class="row">
+				<div class="header-section text-center">
+					<h2>About</h2>
+					<p>
+						India's Leading Research & Innovation Driven Pvt. University<br>
+						Below are some reasons Why we are consistently recognized as best:
+					</p>
+					<hr class="bottom-line">
+				</div>
+
+				<div class="about">
+					<div class="col-md-4">
+						<div class="heading pull-right">
+							<h4>Government Recognized</h4>
+							<p>Jubilant university has been established by an act of
+								State Legislature and reconized by University Grants
+								Commission(UGC) through the Act of State Legislature.</p>
+						</div>
+						<div class="about-img pull-left">
+							<i class="fa fa-check-square-o"></i>
+						</div>
+					</div>
+				</div>
+				<div class="about">
+					<div class="col-md-4">
+						<div class="heading pull-right">
+							<h4>Reputed Faculty</h4>
+							<p>Jubilant has some of the most talented and dedicated
+								thought leaders in the country who come from the best
+								institutions around the world.</p>
+						</div>
+						<div class="about-img pull-left">
+							<i class="fa fa-graduation-cap"></i>
+						</div>
+					</div>
+				</div>
+				<div class="about">
+					<div class="col-md-4">
+						<div class="heading pull-right">
+							<h4>Top Placements</h4>
+							<p>
+								Biggest strength of Jubilant. A unique Corporate Resource centre
+								to facilitate excellent placements.<br> Alumni all over the
+								world in leading companies like McKinsey, HLL and Reliance.
+							</p>
+						</div>
+						<div class="about-img pull-left">
+							<i class="fa fa-trophy"></i>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+	<!--/ About-->
+
+	<!--Programs-->
+	<section id="programmes" class="section-padding">
+		<div class="container">
+			<div class="row">
+				<div class="header-section text-center">
+					<h2>Programmes</h2>
+					<p>
+						There are Various full courses available in our university.<br>
+						Here is the list of some full time graduate and post graduate
+						courses.
+					</p>
+					<hr class="bottom-line">
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="service-box text-center">
+						<h2>Undergraduate Programmes</h2>
+						<p>
+							B.Tech<br>B.com<br>B.B.A<br>B.sc<br>B.C.A
+						</p>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="service-box text-center">
+						<h2>Postgraduate Programmes</h2>
+						<p>
+							M.Tech<br>M.com<br>M.B.A<br>M.sc<br>M.C.A
+						</p>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="service-box text-center">
+						<h2>Trainings</h2>
+						<p>
+							Basic 3D Modelling using Blender<br>Realistic Architectural
+							3D Modelling<br>Trading Algorithms<br>Entrepreneurship<br>And
+							many more
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--/ programmes-->
+
+	<!--Testimonial-->
+	<section id="testimonial" class="section-padding">
+		<div class="container">
+			<div class="row">
+				<div class="header-section text-center">
+					<h2 class="white">See What Our Alumni Are Saying?</h2>
+					<p class="white">Here are some of the experiences shared by our
+						alumni about Jubilant</p>
+					<hr class="bottom-line bg-white">
+				</div>
+				<div class="col-md-6 col-sm-6">
+					<div class="text-comment">
+						<p class="text-par">"Life in Jubilant has been a breathtaking
+							experience.All the faculty members,mentors and everyone in
+							Jubilant family have been a great help and a strong support. This
+							place has immensely added to my persona and I will always cherish
+							the memories I shared with this place."</p>
+							
+						<p class="text-name">
+							Himani Gupta- MBA in Competitive Intelligence<br>
+							Batch:2012-14
+						</p>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-6">
+					<div class="text-comment">
+						<p class="text-par">"Jubilant has been a completely enriching
+							experience. I have acquired lot of confidence through various
+							plaforms provided by College such as Sangathan, Youth Fest etc
+							which gave us opportunity to present our innate creativity and
+							talent. The faculty is very supportive and ready to help
+							anytime."</p>
+						<p class="text-name">
+							Anita Kumari - B.sc(Fashion Design)<br>Batch:2011-14
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--/ Testimonial-->
+	<!--Infrastructure-->
+	<section id="infrasturcture" class="section-padding">
+		<div class="container">
+			<div class="row">
+				<div class="header-section text-center">
+					<h2>Infrastructure</h2>
+					<p></p>
+					<hr class="bottom-line">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-sm-6 padleft-right">
+					<figure class="imghvr-fold-up">
+						<img src="resources/images/library.jfif" class="img-responsive">
+						<figcaption>
+							<h3>Library</h3>
+							<p>Synonymous with the abode of knowledge, the six libraries
+								at Jubilant are stocked with the lakhs of books and thousands of
+								journals to propel the wisdom growth of the students. These
+								libraries are frequently updated with new books and other useful
+								study material for students.</p>
+						</figcaption>
+						<a href="#"></a>
+					</figure>
+				</div>
+				<div class="col-md-4 col-sm-6 padleft-right">
+					<figure class="imghvr-fold-up">
+						<img src="resources/images/classroom.jfif" class="img-responsive">
+						<figcaption>
+							<h3>Syndicate Rooms</h3>
+							<p>
+								300 students can brainstorm at the same time in 50 Syndicate
+								Rooms.<br>The Syndicate Rooms provide the perfect setting
+								to acquire team skills through exercises like brain-storming
+								sessions, group discussions, role-plays etc.
+							</p>
+						</figcaption>
+						<a href="#"></a>
+					</figure>
+				</div>
+				<div class="col-md-4 col-sm-6 padleft-right">
+					<figure class="imghvr-fold-up">
+						<img src="resources/images/auditorium.jfif" class="img-responsive">
+						<figcaption>
+							<h3>Auditorium</h3>
+							<p>State-of-the-art auditoriums with a combined seating
+								capacity of over 3,500 act as a common ground for students,
+								faculty and corporate personalities for regular interfaces,
+								conferences and other events.</p>
+						</figcaption>
+						<a href="#"></a>
+					</figure>
+				</div>
+				<div class="col-md-4 col-sm-6 padleft-right">
+					<figure class="imghvr-fold-up">
+						<img src="resources/images/play.jfif" class="img-responsive">
+						<figcaption>
+							<h3>Playground</h3>
+							<p>At Jubilant,sports form one of the important aspects of a
+								student's development.From increasing concentration levels and
+								working as a team to inculcating a winning spirit;sports help
+								students build a strong character.</p>
+						</figcaption>
+						<a href="#"></a>
+					</figure>
+				</div>
+				<div class="col-md-4 col-sm-6 padleft-right">
+					<figure class="imghvr-fold-up">
+						<img src="resources/images/hostel.jfif" class="img-responsive">
+						<figcaption>
+							<h3>Hostel Accomodation</h3>
+							<p>Jubilant offers comprehensive hostel facilities for boys
+								and girls separately within the University Campus.Caring wardens
+								and a vigilant security ensures a pleasant stay allowing
+								students to focus on academics.</p>
+					
+					</figure>
+				</div>
+				<div class="col-md-4 col-sm-6 padleft-right">
+					<figure class="imghvr-fold-up">
+						<img src="resources/images/labs.jfif" class="img-responsive">
+						<figcaption>
+							<h3>Laboratory</h3>
+							<p>The specialised biotechnology laboratories are equipped to
+								conduct advanced practical and research work.Jubilant has over
+								300 labs where students experiment and bring to practice what
+								they have learnt in theory.</p>
+						</figcaption>
+						<a href="#"></a>
+					</figure>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--/ Courses-->
+
+
+
+
+	<!--Footer-->
+	<footer id="footer" class="footer">
+		<div class="container text-center">
+
+			<h3>For More Information</h3>
+
+
+			<!-- End newsletter-form -->
+			<ul class="social-links">
+				<li><a href="#link"><i class="fa fa-twitter fa-fw"></i></a></li>
+				<li><a href="#link"><i class="fa fa-facebook fa-fw"></i></a></li>
+				<li><a href="#link"><i class="fa fa-google-plus fa-fw"></i></a></li>
+				<li><a href="#link"><i class="fa fa-dribbble fa-fw"></i></a></li>
+				<li><a href="#link"><i class="fa fa-linkedin fa-fw"></i></a></li>
+			</ul>
+			All rights reserved
+
+		</div>
+	</footer>
+	<!--/ Footer-->
+
+	<script src="resources/js/jquery.min.js"></script>
+	<script src="resources/js/jquery.easing.min.js"></script>
+	<script src="resources/js/bootstrap.min.js"></script>
+	<script src="resources/js/custom.js"></script>
+	<script src="resources/contactform/contactform.js"></script>
 
 </body>
+
 </html>
-
-
-
-
-
-

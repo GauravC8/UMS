@@ -39,6 +39,10 @@ public class Faculty {
 	@Column(name = "dob")
 	private Date dob;
 	
+	@Column(name = "department")
+	private String department;
+	
+	
 	@Column(name = "password")
 	private String password;
 	

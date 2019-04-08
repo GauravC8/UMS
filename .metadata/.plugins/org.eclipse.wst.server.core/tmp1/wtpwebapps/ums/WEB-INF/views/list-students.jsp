@@ -16,10 +16,6 @@
 		<div class="col-md-offset-1 col-md-10">
 			<h2>Student Registration</h2>
 			<hr />
-
-			<input type="button" value="Add Student"
-				onclick="window.location.href='showForm'; return false;"
-				class="btn btn-primary" /> <br /> <br />
 			<div class="panel panel-info">
 				<div class="panel-heading">
 					<div class="panel-title">Student List</div>
@@ -80,17 +76,12 @@
 									| <a href="${deleteLink}"
 									onclick="if (!(confirm('Are you sure you want to delete this customer?'))) return false">Delete</a>
 								</td>
-
 							</tr>
-
 						</c:forEach>
-
 					</table>
-
 				</div>
 			</div>
 		</div>
-
 	</div>
 </body>
 </html>

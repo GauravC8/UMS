@@ -10,5 +10,4 @@ public interface StudentDAO {
 	public Student getStudent(String emailId);
 	public void deleteStudent(String emailId);
 	public void saveStudent(Student student);
-	
 }

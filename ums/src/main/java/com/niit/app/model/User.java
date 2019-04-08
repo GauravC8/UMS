@@ -1,0 +1,66 @@
+package com.niit.app.model;
+
+
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="student")
+public class User {
+	@Id
+	@Column(name="emailId")
+	private String emailId;
+	
+	@Column(name="password")
+	private String password;
+
+	public User() {
+	
+	}
+
+	
+
+	public String getEmailId() {
+		return emailId;
+	}
+
+
+
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+
+
+
+	public String getPassword() {
+		/*String encodedString =password;
+		Base64.Decoder decoder = Base64.getDecoder();
+		byte[] decodedByteArray = decoder.decode(encodedString);
+		return (new String(decodedByteArray));*/
+		return password;
+	}
+
+	public void setPassword(String password) {
+	/*	Base64.Encoder encoder = Base64.getEncoder();
+		String normalString = password;
+		String encodedString = encoder.encodeToString(
+	    normalString.getBytes(StandardCharsets.UTF_8) );
+		this.password = encodedString;*/
+		this.password = password;
+	}
+
+	@Override
+	public String toString() {
+		return "User [emailId=" + emailId + ", password=" + password + "]";
+	}
+	
+	
+	
+	
+	
+}

@@ -1,0 +1,5 @@
+package com.niit.app.model;
+
+public class User {
+
+}

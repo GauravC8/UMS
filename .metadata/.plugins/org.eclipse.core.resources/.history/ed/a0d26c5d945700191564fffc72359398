@@ -1,7 +1,0 @@
-<html>
-<body>
-	<h2 align=center>Customer Relationship System</h2>
-	<a href="student/showForm">Register a Studentr</a>
-	<a href="student/list">View Student Details</a>
-</body>
-</html>

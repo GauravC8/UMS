@@ -1,0 +1,14 @@
+
+package com.niit.app.service;
+
+public interface UserService {
+
+	public User checkUser(User theUser);
+}
+
+import com.raj.crm.model.User;
+
+public interface UserService {
+
+	public User checkUser(User theUser);
+}

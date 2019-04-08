@@ -1,0 +1,57 @@
+package com.niit.app.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.niit.app.model.Faculty;
+import com.niit.app.service.FacultyService;
+
+@Controller
+@RequestMapping("/faculty")
+public class FacultyController {
+
+	@Autowired
+	private FacultyService studentService;
+	
+	@GetMapping("/list")
+	public String listStudents(Model theModel) {
+		List<Faculty> faculty = studentService.getFaculties();
+		theModel.addAttribute("students", faculty);
+		return "list-faculties";
+	}
+	
+	@GetMapping("/showForm")
+	public String showFormForAdd(Model theModel) {
+		Faculty faculty = new Faculty();
+		theModel.addAttribute("faculty", faculty);
+		return "";
+	}
+	
+	@RequestMapping(value="/saveStudent",method = RequestMethod.POST)
+	public String saveCustomer(@ModelAttribute("faculty") Faculty faculty) {
+		studentService.saveFaculty(faculty);	
+		return "redirect:/faculty/list";
+	}
+	
+	@GetMapping("/updateForm")
+	public String showFormForUpdate(@RequestParam("emailId") String emailId,
+									Model theModel) {
+		Faculty faculty = studentService.getFaculty(emailId);	
+		theModel.addAttribute("faculty", faculty);
+		return "faculty-form";
+	}
+	
+	@GetMapping("/delete")
+	public String deleteCustomer(@RequestParam("emailId") String emailId) {
+		studentService.deleteFaculty(emailId);
+		return "redirect:/faculty/list";
+	}
+}
