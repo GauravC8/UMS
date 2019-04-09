@@ -1,30 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value=""/>
+		<item key="selection" value="form"/>
 		<item key="wrap" value="false"/>
 		<item key="casesensitive" value="true"/>
-		<item key="wholeword" value="true"/>
+		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="form"/>
+			<item value="student"/>
+			<item value="View Student Details"/>
+			<item value="Register a "/>
+			<item value="Student"/>
+			<item value="getStudent"/>
+			<item value="StudentService"/>
+			<item value="deleteStudent"/>
 			<item value="student0_"/>
 			<item value="id"/>
 			<item value="email"/>
-			<item value="form"/>
 			<item value="Phone"/>
 			<item value="Select course"/>
 			<item value="customerId"/>
 			<item value="tempCustomer"/>
-			<item value="Customer"/>
-			<item value="listCustomers"/>
-			<item value="customers"/>
-			<item value="customer"/>
-			<item value="CustomerService"/>
-			<item value="CustomerDAO"/>
-			<item value="theId"/>
 		</list>
 		<list key="replacehistory">
+			<item value="faculty"/>
+			<item value="Faculty"/>
+			<item value="getFaculty"/>
+			<item value="FacultyService"/>
+			<item value="deleteFaculty"/>
 			<item value="name"/>
 			<item value="studentContact"/>
 			<item value="emailId"/>
@@ -35,8 +40,6 @@
 			<item value="student"/>
 			<item value="StudentService"/>
 			<item value="StudentDAO"/>
-			<item value="app"/>
-			<item value="faculty"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

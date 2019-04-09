@@ -48,7 +48,7 @@
 								<li role="presentation"><a role="menuitem" tabindex="-1"
 									href="user/loginForm">Student</a></li>
 								<li role="presentation"><a role="menuitem" tabindex="-1"
-									href="user/loginForm">Faculty</a></li>
+									href="user/facultyloginForm">Faculty</a></li>
 								<li role="presentation"><a role="menuitem" tabindex="-1"
 									href="user/loginForm">Admin</a></li>
 							</ul>
@@ -60,55 +60,6 @@
 		</div>
 	</nav>
 	<!--/ Navigation bar-->
-
-
-	<!--Modal box-->
-	<div class="modal fade" id="login" role="dialog">
-		<div class="modal-dialog modal-sm">
-
-			<!-- Modal content no 1-->
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title text-center form-title">Login</h4>
-				</div>
-				<div class="modal-body">
-
-					<div class="login-box-body">
-						<%-- <form:form action="user/loginUser" class="form-horizontal"
-							method="post" modelAttribute="user">
-							<div class="form-group">
-								<label for="emailId" class="col-md-3 control-label">Email</label>
-								<div class="col-md-9">
-									<form:input name="emailId" path="emailId"
-										cssClass="form-control" />
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label for="password" class="col-md-3 control-label">Password</label>
-								<div class="col-md-9">
-									<form:password name="password" path="password"
-										cssClass="form-control" />
-								</div>
-							</div>
-							<div class="form-group">
-								<!-- Button -->
-								<div class="col-md-offset-3 col-md-9">
-									<form:button cssClass="btn btn-primary">Login</form:button>
-								</div>
-							</div>
-							<div style="color: red">${error}</div>
-
-						</form:form> --%>
-					</div>
-				</div>
-			</div>
-		</div>
-
-	</div>
-	<!--/ Modal box-->
-
 
 	<!--Banner-->
 	<div class="banner"

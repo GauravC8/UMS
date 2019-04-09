@@ -5,403 +5,318 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>University Management System</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet"
-	href="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
-
-<script>
-	addEventListener("load", function() {
-		setTimeout(hideURLbar, 0);
-	}, false);
-
-	function hideURLbar() {
-		window.scrollTo(0, 1);
-	}
-</script>
-<script src="<c:url value="/resources/js/jquery-2.1.4.min.js" />"></script>
-<script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
-<script src="<c:url value="/resources/js/validator.min.js" />"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-
-.button {
-  display: inline-block;
-  padding: 4px 10px;
-  font-size: 18px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  background-color: #5DADE2;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
+* {
+	box-sizing: border-box;
 }
 
-.button:hover {background-color: #2980B9}
+input[type=text], select, textarea {
+	width: 50%;
+	padding: 6px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	resize: vertical;
+}
 
-.button:active {
-  background-color: #2980B9;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+label {
+	padding: 12px 12px 12px 0;
+	display: inline-block;
 }
-.navbar-brand{
-text-color:green;
+
+input[type=submit] {
+	background-color: #0771B6;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	float: right;
 }
-.span {
-	font-weight: 100 !important;
+
+input[type=submit]:hover {
+	background-color: #45a049;
+}
+
+.container {
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px;
+}
+
+.col-25 {
+	float: left;
+	width: 25%;
+	margin-top: 6px;
+}
+
+.col-75 {
+	float: left;
+	width: 75%;
+	margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+@media screen and (max-width: 600px) {
+	.col-25, .col-75, input[type=submit] {
+		width: 100%;
+		margin-top: 0;
+	}
 }
 </style>
 </head>
 <body>
-	<div class="jumbotron jumbotron-fluid">
-		<div class="container">
-			<!-- Navigation bar -->
-
-			<nav class="navbar navbar-inverse">
-				<div class="container-fluid">
-					<div class="navbar-header">
-
-						<a class="navbar-brand" href="#"><b>Jubi</b><span>lant</span></a>
-					</div>
-					<div class="collapse navbar-collapse" id="myNavbar">
-						<ul class="nav navbar-nav">
-							<li class="active"><a href="#">Home</a></li>
-							<li class="dropdown"><a class="dropdown-toggle"
-								data-toggle="dropdown" href="#">UMS Navigation <span
-									class="caret"></span></a>
-								<ul class="dropdown-menu">
-									<li><a href="#">My Profile</a></li>
-									<li><a href="#">Examination</a></li>
-									<li><a href="#">View Result</a></li>
-									<li><a href="#">View Attendance</a></li>
-									<li><a href="#">View Timetable</a></li>
-									<li><a href="#">Assignment Upload</a></li>
-									<li><a href="#">Assignment Download</a></li>
-									<li><a href="#">Online Survey</a></li>
-								</ul></li>
-							<li><a href="#" data-toggle="modal" data-target="#myModal">Change
-									Password</a></li>
-						</ul>
-						<ul class="nav navbar-nav navbar-right">
-
-							<li><a href="#"><span
-									class="glyphicon glyphicon-log-out"></span>Logout</a></li>
-						</ul>
-					</div>
-
-					<!-- Modal -->
-					<div class="modal fade" id="myModal" role="dialog">
-						<div class="modal-dialog">
-
-							<!-- Modal content-->
-							<div class="modal-content">
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal">&times;</button>
-									<h4 class="modal-title">Change Password</h4>
-								</div>
-								<div class="modal-body">
-									<form action="#">
-										<div class="form-group">
-											<label for="email">Old Password</label> <input type="email"
-												class="form-control" id="email">
-										</div>
-										<div class="form-group">
-											<label for="pwd">New Password:</label> <input type="password"
-												class="form-control" id="pwd">
-										</div>
-										<div class="form-group">
-											<label for="pwd">Confirm Password:</label> <input
-												type="password" class="form-control" id="pwd">
-										</div>
-										<button type="submit" class="btn btn-default">Submit</button>
-									</form>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-default"
-										data-dismiss="modal">Close</button>
-								</div>
-							</div>
-
-						</div>
-					</div>
-				</div>
-			</nav>
-
-			<br>
-
-			<div class="row mt-5">
-				<div class="col-lg-3 ">
-
-					<div class="container">
-						<div class="row  bg-primary">
-							<div class="col-sm-6 col-md-4 ">
-								<img
-									src="file:///D:/Project/UMS/WebContent/images/prfile_user.png"
-									alt="" class="img-rounded img-responsive" />
 
 
-							</div>
-							<div class="col-sm-6 col-md-8">
-								<h4>${usr}</h4>
-								<small><cite title="San Francisco, USA">NIIT
-										Technologies , Delhi<i class="glyphicon glyphicon-map-marker">
-									</i>
-								</cite></small>
-								<p>
-									<i class="glyphicon glyphicon-gift"></i>Jan 1, 1999
-								</p>
-							</div>
+	<div class="container">
+		<form action="/ums/student/saveStudent" method="post"
+								modelAttribute="Student" data-toggle="validator">
 
-						</div>
-						<br>
-						<div class="form-group">
-							<label for="rollno">Roll No.:</label>
-							<p>Insert roll no</p>
-						</div>
-						<div class="form-group">
-							<label for="pgm">Program:</label>
-							<p>Insert program</p>
-						</div>
-
-						<div class="form-group">
-							<label for="scn">Section:</label>
-							<p>Insert roll no</p>
-						</div>
-					</div>
+			<div class="row">
+				<div class="col-25">
+					<label for="studentFirstName" class="control-label"> First
+						Name:</label>
 				</div>
 
-
-				<div class="col-lg-9">
-				<div class="row">
-					<div class="col-sm-8">
-						<p>
-							<b> <marquee>!!Important Announcements!!</b>
-							</marquee>
-						<ul>
-							<li>18th March is declared as a holiday due to Good Friday!</li>
-							<li>Registrations for Under-18 Girls BasketBall Tournament
-								will start from 17th April'19!</li>
-							<li>From now, it is mandatory to maintain 80% attendance.</li>
-						</ul>
-						<br> <br>
-
-					</div>
-					<br> <br>
-					<button class="button">View TimeTable</button>
-					<br>
-					<br>
-					<br> <a href="#" data-toggle="modal"
-						data-target="#registerModel"><button class="button">Register
-							Student</button></a>
-					
-					
-					<br>
-					<br>
-					<br>
-					
-					<button class="button"><a href="/ums/student/list">View Student Details</a></button>
-					<!--Register Modal -->
-					<div class="modal fade" id="registerModel" role="dialog">
-						<div class="modal-dialog">
-
-							<!-- Modal content-->
-							<div class="modal-content">
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal">&times;</button>
-									<h4 class="modal-title">Student Registration</h4>
-								</div>
-								<div class="modal-body">
-									<form action="/ums/student/saveStudent" method="post"
-										modelAttribute="Student" data-toggle="validator">
-										<div class="form-group">
-											<label for="studentFirstName" class="control-label">First
-												First Name:</label> <input type="text" class="form-control"
-												id="studentFirstName" name="studentFirstName" placeholder="First Name"
-												data-error="Enter First Name" required>
-											<div class="help-block with-errors"></div>
-										</div>
-										<div class="form-group">
-											<label for="studentLastName" class="control-label">
-												Last Name:</label> <input type="text" class="form-control"
-												id="studentLastName" name="studentLastName"placeholder="Last Name"
-												data-error="Enter Last Name" required>
-											<div class="help-block with-errors"></div>
-										</div>
-										<div class="form-group w3ls-opt">
-											<label for="studentGender" class="control-label">Gender</label>
-											<label class="w3layouts"> <input type="radio"
-												name="studentGender" id="studentGender" name="studentGender" value="male" checked>Male
-											</label> <label class="w3layouts label2"> <input type="radio"
-												name="studentGender" id="studentGender" name="studentGender" value="female">Female
-											</label>
-										</div>
-										<div class="form-group">
-											<label for="emailId" class="control-label">Email:</label>
-											<input type="email" class="form-control" id="emailId" name="emailId"
-												placeholder="Email"
-												data-error="This email address is invalid" required>
-											<div class="help-block with-errors"></div>
-										</div>
-										<div class="form-group">
-											<label for="studentContact" class="control-label">studentContact:</label>
-											<input type="text" class="form-control" id="studentContact" name="studentContact"
-												placeholder="studentContact" data-error="Enter Phone Number"
-												required>
-											<div class="help-block with-errors"></div>
-										</div>
-										<div class="form-group">
-											<label for="studentFatherName" class="control-label">Father's
-												Name:</label> <input type="text" class="form-control"
-												id="studentFatherName" name="studentFatherName" placeholder="Father's Name"
-												data-error="Enter Father's Name" required>
-											<div class="help-block with-errors"></div>
-										</div>
-										<div class="form-group">
-											<label for="studentMotherName" class="control-label">Mother's
-												Name:</label> <input type="text" class="form-control"
-												id="studentMotherName" name="studentMotherName" placeholder="Mother's Name"
-												data-error="Enter Mother's Name" required>
-											<div class="help-block with-errors"></div>
-										</div>
-										<div class="form-group">
-											<label for="dob" class="control-label">Date of Birth:</label>
-											<input type="date" class="form-control" id="dob" name="dob"
-												placeholder="date" data-error="Enter Date of Birth" required>
-											<div class="help-block with-errors"></div>
-										</div>
-										<div class="form-group">
-											<label class="control-label" for="studentCourseEnroll">Select
-												Course Enrolled in:</label> <select class="form-control"
-												id="studentCourseEnroll" name="studentCourseEnroll">
-												<option>B.B.A</option>
-												<option>B.C.A</option>
-												<option>B.Com</option>
-												<option>B.Tech</option>
-												<option>M.B.A</option>
-												<option>M.C.A</option>
-												<option>M.Com</option>
-												<option>M.Tech</option>
-
-											</select>
-										</div>
-										<div class="form-group">
-											<label for="address">Address:</label>
-											<textarea class="form-control" rows="3" id="address" name=""></textarea>
-										</div>
-										<div class="form-group">
-											<div class="col-md-6 mb-3">
-												<label for="city" class="control-label">City:</label> <input
-													type="text" class="form-control" id="city" name="city"
-													placeholder="City" data-error="Enter correct city" required>
-												<div class="help-block with-errors"></div>
-											</div>
-										</div>
-										<div class="form-group">
-											<div class="col-md-6 mb-3">
-												<label for="state" class="control-label">State:</label> <input
-													type="text" class="form-control" id="state" name="state"
-													placeholder="State" data-error="Enter correct state"
-													required>
-												<div class="help-block with-errors"></div>
-											</div>
-										</div>
-										<div class="form-group">
-											<div class="col-md-6 mb-3">
-												<label for="pincode" class="control-label">PinCode:</label>
-												<input type="text" class="form-control" id="pincode" name="pincode"
-													placeholder="PinCode" data-error="Enter correct pincode"
-													required>
-												<div class="help-block with-errors"></div>
-											</div>
-										</div>
-										<div class="form-group">
-											<div class="col-md-6 mb-3">
-												<label for="country" class="control-label">Country :</label>
-												<input type="text" class="form-control" id="country" name="country"
-													placeholder="Country" required>
-												<div class="help-block with-errors"></div>
-											</div>
-										</div>
-
-										<div class="form-group">
-											<label for="password" class="control-label">Password:</label>
-											<div class="form-inline row">
-												<div class="form-group col-sm-6 agileits-w3layouts">
-													<input type="password" data-minlength="6"
-														class="form-control" id="password" name="password" placeholder="Password"
-														required>
-													<div class="help-block">Minimum of 6 characters</div>
-												</div>
-												<div class="form-group col-sm-6 w3-agile">
-													<input type="password" class="form-control"
-														id="inputPasswordConfirm"  data-match="#password"
-														data-match-error="Whoops, these don't match"
-														placeholder="Confirm Password" required>
-													<div class="help-block with-errors"></div>
-												</div>
-											</div>
-										</div>
-
-										<div class="form-group">
-											<button type="submit" class="btn btn-lg">submit</button>
-										</div>
-									</form>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-default"
-										data-dismiss="modal">Close</button>
-								</div>
-							</div>
-
-						</div>
-					</div>
-					
-					
-					
-					
-					
+				<div class="col-75">
+					<input type="text" class="form-control" id="studentFirstName"
+						name="studentFirstName" placeholder="First Name"
+						data-error="Enter First Name" required>
+					<div class="help-block with-errors"></div>
 				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-25">
+					<label for="lname">Last Name</label>
+				</div>
+
+				<div class="col-75">
+					<input type="text" class="form-control" id="studentLastName"
+						name="studentLastName" placeholder="Last Name"
+						data-error="Enter Last Name" required>
+					<div class="help-block with-errors"></div>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-25">
+					<label for="lname">Gender</label>
+				</div>
+
+				<div class="col-75">
+
+					<label class="w3layouts"> <input type="radio"
+						name="studentGender" id="studentGender" name="studentGender"
+						value="male" checked>Male
+					</label> <label class="w3layouts label2"> <input type="radio"
+						name="studentGender" id="studentGender" name="studentGender"
+						value="female">Female
+					</label>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-25">
+					<label for="emailId" class="control-label">Email:</label>
+				</div>
+
+				<div class="col-75">
+					<input type="text" class="form-control" id="emailId" name="emailId"
+						placeholder="Email" data-error="This email address is invalid"
+						required>
+					<div class="help-block with-errors"></div>
+				</div>
+			</div>
+
+
+
+			<div class="row">
+				<div class="col-25">
+					<label for="studentContact" class="control-label">StudentContact:</label>
+				</div>
+
+				<div class="col-75">
+					<input type="text" class="form-control" id="StudentContact"
+						name="StudentContact" placeholder="StudentContact"
+						data-error="Enter Phone Number" required>
+					<div class="help-block with-errors"></div>
+				</div>
+			</div>
+
+
+
+			<div class="row">
+				<div class="col-25">
+					<label for="studentFatherName" class="control-label">Father's
+						Name:</label>
+				</div>
+
+				<div class="col-75">
+					<input type="text" class="form-control" id="studentFatherName"
+						name="studentFatherName" placeholder="Father's Name"
+						data-error="Enter Father's Name" required>
+					<div class="help-block with-errors"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-25">
+					<label for="studentMotherName" class="control-label">Mother's
+						Name:</label>
+				</div>
+
+				<div class="col-75">
+					<input type="text" class="form-control" id="studentMotherName"
+						name="studentMotherName" placeholder="Mother's Name"
+						data-error="Enter Mother's Name" required>
+					<div class="help-block with-errors"></div>
+				</div>
+
 
 
 			</div>
 
-			<div class=" container text-center bg-dark">
 
-				<p class="p-4 bg-dark text-white">
-					©2019 Copyright: <a href="#">UmsManagementsystem.com</a>
-				</p>
+
+			<div class="row">
+				<div class="col-25">
+					<label for="dob" class="control-label">Date of Birth:</label>
+				</div>
+
+				<div class="col-75">
+
+					<input type="date" class="form-control" id="dob" name="dob"
+						placeholder="date" data-error="Enter Date of Birth" required>
+					<div class="help-block with-errors"></div>
+
+
+				</div>
+
 			</div>
-		</div>
+
+
+
+
+			<div class="row">
+				<div class="col-25">
+					<label class="control-label" for="studentCourseEnroll">Select
+						Course Enrolled in:</label>
+				</div>
+
+				<div class="col-75">
+
+					<select class="form-control" id="studentCourseEnroll"
+						name="studentCourseEnroll">
+						<option>B.B.A</option>
+						<option>B.C.A</option>
+						<option>B.Com</option>
+						<option>B.Tech</option>
+						<option>M.B.A</option>
+						<option>M.C.A</option>
+						<option>M.Com</option>
+						<option>M.Tech</option>
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-25">
+					<label for="address">Address:</label>
+				</div>
+
+				<div class="col-75">
+					<textarea class="form-control" rows="3" id="address" name="address"></textarea>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-25">
+					<label for="city" class="control-label">City:</label>
+				</div>
+
+				<div class="col-75">
+					<input type="text" class="form-control" id="city" name="city"
+						placeholder="City" data-error="Enter correct city" required>
+					<div class="help-block with-errors"></div>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-25">
+					<label for="state" class="control-label">State:</label>
+				</div>
+
+				<div class="col-75">
+					<input type="text" class="form-control" id="state" name="state"
+						placeholder="State" data-error="Enter correct state" required>
+					<div class="help-block with-errors"></div>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-25">
+					<label for="pincode" class="control-label">PinCode:</label>
+				</div>
+
+				<div class="col-75">
+					<input type="text" class="form-control" id="pincode" name="pincode"
+						placeholder="PinCode" data-error="Enter correct pincode" required>
+					<div class="help-block with-errors"></div>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-25">
+					<label for="country" class="control-label">Country :</label>
+				</div>
+
+				<div class="col-75">
+					<input type="text" class="form-control" id="country" name="country"
+						placeholder="Country" required>
+					<div class="help-block with-errors"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-25">
+					<label for="password" class="control-label">Password:</label>
+				</div>
+
+				<div class="col-75">
+					<input type="text" data-minlength="6" class="form-control"
+						id="password" name="password" placeholder="Password" required>
+					<div class="help-block">Minimum of 6 characters</div>
+
+					<br> <input type="text" class="form-control"
+						id="inputPasswordConfirm" data-match="#password"
+						data-match-error="Whoops, these don't match"
+						placeholder="Confirm Password" required>
+					<div class="help-block with-errors"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-25">
+					<label for="role" class="control-label">Role :</label>
+				</div>
+
+				<div class="col-75">
+					<input type="text" class="form-control" id="role" name="role"
+						placeholder="Role" required>
+					<div class="help-block with-errors"></div>
+				</div>
+			</div>
+			<div class="row">
+				<input type="submit" value="Submit">
+			</div>
+		</form>
 	</div>
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-		crossorigin="anonymous"></script>
-
 </body>
 </html>
-
-
-
-
-
-

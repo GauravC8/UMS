@@ -1,10 +1,15 @@
 package com.niit.app.model;
 
+import java.nio.charset.StandardCharsets;
 import java.sql.Date;
+import java.util.Base64;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -51,66 +56,21 @@ public class Student {
 	@Column(name = "pincode")
 	private String pincode;
 
-	public String getState() {
-		return state;
-	}
+	@Column(name = "role")
+	private char role;
 
-	public void setState(String state) {
-		this.state = state;
-	}
+	
 
 	@Column(name = "country")
 	private String country;
 
 	@Column(name = "password")
 	private String password;
-
-	public String getStudentCourseEnroll() {
-		return studentCourseEnroll;
-	}
-
-	public void setStudentCourseEnroll(String studentCourseEnroll) {
-		this.studentCourseEnroll = studentCourseEnroll;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	public String getPincode() {
-		return pincode;
-	}
-
-	public void setPincode(String pincode) {
-		this.pincode = pincode;
-	}
-
-	public String getCountry() {
-		return country;
-	}
-
-	public void setCountry(String country) {
-		this.country = country;
-	}
-
-	/*
-	 * private String street; private String city; private String state; private
-	 * String country; private int pincode;
-	 * 
-	 * private String enrolledCourse; private List<String> qualification;
-	 */
+	
+	/*------------------------------------------------------------*/
+	@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(unique = true)
+    private User user;
 
 	public String getEmailId() {
 		return emailId;
@@ -120,20 +80,20 @@ public class Student {
 		this.emailId = emailId;
 	}
 
-	public String getStudentLastName() {
-		return studentLastName;
-	}
-
-	public void setStudentLastName(String studentLastName) {
-		this.studentLastName = studentLastName;
-	}
-
 	public String getStudentFirstName() {
 		return studentFirstName;
 	}
 
 	public void setStudentFirstName(String studentFirstName) {
 		this.studentFirstName = studentFirstName;
+	}
+
+	public String getStudentLastName() {
+		return studentLastName;
+	}
+
+	public void setStudentLastName(String studentLastName) {
+		this.studentLastName = studentLastName;
 	}
 
 	public String getStudentContact() {
@@ -176,21 +136,76 @@ public class Student {
 		this.dob = dob;
 	}
 
+	public String getStudentCourseEnroll() {
+		return studentCourseEnroll;
+	}
+
+	public void setStudentCourseEnroll(String studentCourseEnroll) {
+		this.studentCourseEnroll = studentCourseEnroll;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public String getPincode() {
+		return pincode;
+	}
+
+	public void setPincode(String pincode) {
+		this.pincode = pincode;
+	}
+
+	public char getRole() {
+		return role;
+	}
+
+	public void setRole(char role) {
+		this.role = role;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
 	public String getPassword() {
-		return password;
+		String encodedString = password;
+		Base64.Decoder decoder = Base64.getDecoder();
+		byte[] decodedByteArray = decoder.decode(encodedString);
+		return (new String(decodedByteArray));
+		/* return password; */
 	}
 
 	public void setPassword(String password) {
+		Base64.Encoder encoder = Base64.getEncoder();
+		String normalString = password;
+		String encodedString = encoder.encodeToString(normalString.getBytes(StandardCharsets.UTF_8));
+		this.password = encodedString;
 		this.password = password;
-	}
-
-	@Override
-	public String toString() {
-		return "Student [emailId=" + emailId + ", studentLastName=" + studentLastName + ", studentContact="
-				+ studentContact + ", studentGender=" + studentGender + ", studentMotherName=" + studentMotherName
-				+ ", studentFatherName=" + studentFatherName + ", dob=" + dob + ", studentCourseEnroll="
-				+ studentCourseEnroll + ", address=" + address + ", city=" + city + ", pincode=" + pincode
-				+ ", country=" + country + ", password=" + password + "]";
 	}
 
 }

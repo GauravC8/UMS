@@ -6,3 +6,10 @@
 1554703987541	Move 'studentRegistration.jsp' to 'views'
 1554704002791	Move 'login-user.jsp' to 'views'
 1554704015291	Delete element
+1554781325668	Rename resource 'studentRegistration.jsp'
+1554786290898	Delete element
+1554786332950	Move 'database.yml' to 'resources'
+1554806368373	Copy folder
+1554806422514	Copy folder
+1554806444502	Copy elements
+1554806482722	Copy file

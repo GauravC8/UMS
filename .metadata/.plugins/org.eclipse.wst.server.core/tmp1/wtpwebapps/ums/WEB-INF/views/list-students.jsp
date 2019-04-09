@@ -70,6 +70,7 @@
 								<td>${xStudent.pincode}</td>
 								<td>${xStudent.country}</td>
 								<td>${xStudent.password}</td>
+								<td>${xStudent.role}</td>
 
 								<td>
 									<!-- display the update link --> <a href="${updateLink}">Update</a>

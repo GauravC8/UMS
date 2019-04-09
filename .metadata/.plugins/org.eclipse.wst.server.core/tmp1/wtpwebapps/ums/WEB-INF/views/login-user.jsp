@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Login | CRM</title>
+<title>Login</title>
 <link href="<c:url value="/resources/css/bootstrap.min.css" />"
 	rel="stylesheet">
 <script src="<c:url value="/resources/js/jquery-1.11.1.min.js" />"></script>
@@ -16,10 +16,10 @@
 <body>
 	<div class="container">
 		<div class="col-md-offset-2 col-md-7">
-			<h2 class="text-center">Login - CRM</h2>
+			<h2 class="text-center">Login</h2>
 			<div class="panel panel-info">
 				<div class="panel-heading">
-					<div class="panel-title">Add Customer</div>
+					<div class="panel-title">Login</div>
 				</div>
 				<div class="panel-body">
 					<form:form action="loginUser" cssClass="form-horizontal"
