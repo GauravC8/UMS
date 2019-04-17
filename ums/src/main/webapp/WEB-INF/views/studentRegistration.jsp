@@ -75,8 +75,7 @@ input[type=submit]:hover {
 
 
 	<div class="container">
-		<form action="/ums/student/saveStudent" method="post"
-								modelAttribute="Student" data-toggle="validator">
+		<form action="/ums/student/saveStudent" method="post" modelAttribute="Student" data-toggle="validator">
 
 			<div class="row">
 				<div class="col-25">
@@ -86,7 +85,7 @@ input[type=submit]:hover {
 
 				<div class="col-75">
 					<input type="text" class="form-control" id="studentFirstName"
-						name="studentFirstName" placeholder="First Name"
+						name="studentFirstName" value="${Student.studentFirstName}"  placeholder="First Name"
 						data-error="Enter First Name" required>
 					<div class="help-block with-errors"></div>
 				</div>
@@ -99,7 +98,7 @@ input[type=submit]:hover {
 
 				<div class="col-75">
 					<input type="text" class="form-control" id="studentLastName"
-						name="studentLastName" placeholder="Last Name"
+						name="studentLastName" value="${Student.studentLastName}" placeholder="Last Name"
 						data-error="Enter Last Name" required>
 					<div class="help-block with-errors"></div>
 				</div>
@@ -114,10 +113,10 @@ input[type=submit]:hover {
 				<div class="col-75">
 
 					<label class="w3layouts"> <input type="radio"
-						name="studentGender" id="studentGender" name="studentGender"
+						name="studentGender" id="studentGender" name="studentGender" value="${Student.studentGender}"
 						value="male" checked>Male
 					</label> <label class="w3layouts label2"> <input type="radio"
-						name="studentGender" id="studentGender" name="studentGender"
+						name="studentGender" id="studentGender" name="studentGender"  value="${Student.studentGender}"
 						value="female">Female
 					</label>
 				</div>
@@ -130,7 +129,7 @@ input[type=submit]:hover {
 				</div>
 
 				<div class="col-75">
-					<input type="text" class="form-control" id="emailId" name="emailId"
+					<input type="text" class="form-control" id="emailId" name="emailId" value="${Student.emailId}"
 						placeholder="Email" data-error="This email address is invalid"
 						required>
 					<div class="help-block with-errors"></div>
@@ -146,7 +145,7 @@ input[type=submit]:hover {
 
 				<div class="col-75">
 					<input type="text" class="form-control" id="StudentContact"
-						name="StudentContact" placeholder="StudentContact"
+						name="StudentContact" value="${Student.studentContact}" placeholder="StudentContact"
 						data-error="Enter Phone Number" required>
 					<div class="help-block with-errors"></div>
 				</div>
@@ -162,7 +161,7 @@ input[type=submit]:hover {
 
 				<div class="col-75">
 					<input type="text" class="form-control" id="studentFatherName"
-						name="studentFatherName" placeholder="Father's Name"
+						name="studentFatherName" value="${Student.studentFatherName}" placeholder="Father's Name"
 						data-error="Enter Father's Name" required>
 					<div class="help-block with-errors"></div>
 				</div>
@@ -175,7 +174,7 @@ input[type=submit]:hover {
 
 				<div class="col-75">
 					<input type="text" class="form-control" id="studentMotherName"
-						name="studentMotherName" placeholder="Mother's Name"
+						name="studentMotherName" value="${Student.studentMotherName}" placeholder="Mother's Name"
 						data-error="Enter Mother's Name" required>
 					<div class="help-block with-errors"></div>
 				</div>
@@ -193,7 +192,7 @@ input[type=submit]:hover {
 
 				<div class="col-75">
 
-					<input type="date" class="form-control" id="dob" name="dob"
+					<input type="date" class="form-control" id="dob" name="dob" value="${Student.dob}"
 						placeholder="date" data-error="Enter Date of Birth" required>
 					<div class="help-block with-errors"></div>
 
@@ -214,7 +213,7 @@ input[type=submit]:hover {
 				<div class="col-75">
 
 					<select class="form-control" id="studentCourseEnroll"
-						name="studentCourseEnroll">
+						name="studentCourseEnroll" value="${Student.studentCourseEnroll}">
 						<option>B.B.A</option>
 						<option>B.C.A</option>
 						<option>B.Com</option>
@@ -232,7 +231,7 @@ input[type=submit]:hover {
 				</div>
 
 				<div class="col-75">
-					<textarea class="form-control" rows="3" id="address" name="address"></textarea>
+					<textarea class="form-control" rows="3" id="address" name="address"  value="${Student.address}"></textarea>
 				</div>
 			</div>
 			<div class="row">
@@ -241,8 +240,8 @@ input[type=submit]:hover {
 				</div>
 
 				<div class="col-75">
-					<input type="text" class="form-control" id="city" name="city"
-						placeholder="City" data-error="Enter correct city" required>
+					<input type="text" class="form-control" id="city" name="city" value="${Student.city}"
+						 data-error="Enter correct city" required>
 					<div class="help-block with-errors"></div>
 				</div>
 			</div>
@@ -254,8 +253,7 @@ input[type=submit]:hover {
 				</div>
 
 				<div class="col-75">
-					<input type="text" class="form-control" id="state" name="state"
-						placeholder="State" data-error="Enter correct state" required>
+					<input type="text" class="form-control" id="state" name="state" value="${Student.state}"  data-error="Enter correct state" required>
 					<div class="help-block with-errors"></div>
 				</div>
 			</div>
@@ -267,8 +265,8 @@ input[type=submit]:hover {
 				</div>
 
 				<div class="col-75">
-					<input type="text" class="form-control" id="pincode" name="pincode"
-						placeholder="PinCode" data-error="Enter correct pincode" required>
+					<input type="text" class="form-control" id="pincode" name="pincode" value="${Student.pincode}"
+						 data-error="Enter correct pincode" required>
 					<div class="help-block with-errors"></div>
 				</div>
 			</div>
@@ -280,19 +278,19 @@ input[type=submit]:hover {
 				</div>
 
 				<div class="col-75">
-					<input type="text" class="form-control" id="country" name="country"
+					<input type="text" class="form-control" id="country" name="country" value="${Student.country}"
 						placeholder="Country" required>
 					<div class="help-block with-errors"></div>
 				</div>
 			</div>
-			<div class="row">
+			<!-- <div class="row">
 				<div class="col-25">
 					<label for="password" class="control-label">Password:</label>
 				</div>
 
 				<div class="col-75">
 					<input type="text" data-minlength="6" class="form-control"
-						id="password" name="password" placeholder="Password" required>
+						id="password" name="password"   placeholder="Password" required>
 					<div class="help-block">Minimum of 6 characters</div>
 
 					<br> <input type="text" class="form-control"
@@ -301,18 +299,18 @@ input[type=submit]:hover {
 						placeholder="Confirm Password" required>
 					<div class="help-block with-errors"></div>
 				</div>
-			</div>
-			<div class="row">
+			</div> -->
+			<!-- <div class="row">
 				<div class="col-25">
 					<label for="role" class="control-label">Role :</label>
-				</div>
+				</div> -->
 
-				<div class="col-75">
+				<!-- <div class="col-75">
 					<input type="text" class="form-control" id="role" name="role"
 						placeholder="Role" required>
 					<div class="help-block with-errors"></div>
 				</div>
-			</div>
+			</div> -->
 			<div class="row">
 				<input type="submit" value="Submit">
 			</div>

@@ -30,9 +30,10 @@ public class FacultyController {
 	
 	@GetMapping("/showForm")
 	public String showFormForAdd(Model theModel) {
+		System.out.println("showForm showForm ");
 		Faculty faculty = new Faculty();
 		theModel.addAttribute("faculty", faculty);
-		return "";
+		return "facultyIndex";
 	}
 	
 	@RequestMapping(value="/saveFaculty",method = RequestMethod.POST)

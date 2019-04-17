@@ -51,9 +51,10 @@
 		<property name="packagesToScan" value="com.niit.app.model" />
 		<property name="hibernateProperties">
 		 <props>
-            <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+            <prop key="hibernate.hbm2ddl.auto">update</prop>
             <prop key="hibernate.dialect">${hibernate.dialect.MySQLDialect}</prop>
             <prop key="hibernate.show_sql">true</prop>
+           
       	 </props>
 		</property>
 	</bean>

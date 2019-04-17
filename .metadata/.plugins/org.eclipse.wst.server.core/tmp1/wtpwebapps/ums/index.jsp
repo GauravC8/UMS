@@ -46,11 +46,11 @@
 							</button>
 							<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
 								<li role="presentation"><a role="menuitem" tabindex="-1"
-									href="user/loginForm">Student</a></li>
+									href="user/loginForm?role=s">Student</a></li>
 								<li role="presentation"><a role="menuitem" tabindex="-1"
-									href="user/facultyloginForm">Faculty</a></li>
+									href="user/loginForm?role=f">Faculty</a></li>
 								<li role="presentation"><a role="menuitem" tabindex="-1"
-									href="user/loginForm">Admin</a></li>
+									href="user/loginForm?role=a">Admin</a></li>
 							</ul>
 						</div>
 					</li>
@@ -103,7 +103,7 @@
 						<div class="heading pull-right">
 							<h4>Government Recognized</h4>
 							<p>Jubilant university has been established by an act of
-								State Legislature and reconized by University Grants
+								State Legislature and recognized by University Grants
 								Commission(UGC) through the Act of State Legislature.</p>
 						</div>
 						<div class="about-img pull-left">

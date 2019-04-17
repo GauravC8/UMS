@@ -81,25 +81,14 @@
 					<div class="collapse navbar-collapse" id="myNavbar">
 						<ul class="nav navbar-nav">
 							<li class="active"><a href="#">Home</a></li>
-							<li class="dropdown"><a class="dropdown-toggle"
-								data-toggle="dropdown" href="#">UMS Navigation <span
-									class="caret"></span></a>
-								<ul class="dropdown-menu">
-									<li><a href="#">My Profile</a></li>
-									<li><a href="#">Examination</a></li>
-									<li><a href="#">View Result</a></li>
-									<li><a href="#">View Attendance</a></li>
-									<li><a href="#">View Timetable</a></li>
-									<li><a href="#">Assignment Upload</a></li>
-									<li><a href="#">Assignment Download</a></li>
-									<li><a href="#">Online Survey</a></li>
-								</ul></li>
+							
 							<li><a href="#" data-toggle="modal" data-target="#myModal">Change
 									Password</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 
-							<li><a href="#"><span
+						
+							<li><a href="/ums/user/logout"><span
 									class="glyphicon glyphicon-log-out"></span>Logout</a></li>
 						</ul>
 					</div>
@@ -142,8 +131,9 @@
 				</div>
 			</nav>
 
-			<br>
-
+		<br><br><br>	<br>
+${user.role}
+<br><br><br>
 			<div class="row mt-5">
 				<div class="col-lg-3 ">
 
@@ -157,31 +147,17 @@
 
 							</div>
 							<div class="col-sm-6 col-md-8">
-								<h4>${usr}</h4>
-								<small><cite title="San Francisco, USA">NIIT
-										Technologies , Delhi<i class="glyphicon glyphicon-map-marker">
+								<h3>STUDENT</h3>
+								<small><cite title="San Francisco, USA">JUBILANT University, 
+								Delhi<i class="glyphicon glyphicon-map-marker">
 									</i>
 								</cite></small>
-								<p>
-									<i class="glyphicon glyphicon-gift"></i>Jan 1, 1999
-								</p>
+								
 							</div>
 
 						</div>
 						<br>
-						<div class="form-group">
-							<label for="rollno">Roll No.:</label>
-							<p>Insert roll no</p>
-						</div>
-						<div class="form-group">
-							<label for="pgm">Program:</label>
-							<p>Insert program</p>
-						</div>
-
-						<div class="form-group">
-							<label for="scn">Section:</label>
-							<p>Insert roll no</p>
-						</div>
+						
 					</div>
 				</div>
 
@@ -201,14 +177,19 @@
 							<br> <br>
 
 						</div>
-						<br> <br>
-						<button class="button">View TimeTable</button>
-						<br> <br> <br> <a href="#" data-toggle="modal"
-							data-target="#registerModel"><button class="button">Register
-								Student</button></a> <br> <br> <br>
-
 						<button class="button">
-							<a href="/ums/student/list">View Student Details</a>
+							<a href="/ums/student/showStudent?studentId= ${usr.studentId}">View Profile</a>
+						</button><br><br>
+					<a href="/ums/timetable/list?role=s">	<button class="button"> View TimeTable</button></a>
+						<br> <br>  <!-- <a href="#" data-toggle="modal"
+							data-target="#registerModel"><button class="button">Register
+								Student</button></a> <br> <br> <br> -->
+<a href="/ums/result/list?role=s">	<button class="button"> View Result</button></a>
+						<br> <br> 
+						
+						<%-- ${usr.id}  ${usr.student.id} --%>
+						<button class="button">
+							<a href="/ums/assign/viewAssignment?studentId= ${usr.studentId}">Upload Assignments</a>
 						</button>
 						<!--Register Modal -->
 						<div class="modal fade" id="registerModel" role="dialog">

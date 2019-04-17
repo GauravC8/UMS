@@ -1,19 +1,27 @@
 package com.niit.app.model;
 
+import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
 import java.sql.Date;
 import java.util.Base64;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "faculty")
-public class Faculty {
+public class Faculty implements Serializable{
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	@Column(name = "id")
+	private int id;
+	
 	@Column(name = "emailId", unique = true, columnDefinition = "VARCHAR(64)")
 	private String emailId;
 
@@ -24,7 +32,7 @@ public class Faculty {
 	private String facultyLastName;
 
 	@Column(name = "facultyContact")
-	private int facultyContact;
+	private String facultyContact;
 
 	@Column(name = "facultyGender")
 	private String facultyGender;
@@ -49,6 +57,9 @@ public class Faculty {
 
 	@Column(name = "state")
 	private String state;
+	
+	@Column(name = "country")
+	private String country;
 
 	@Column(name = "pincode")
 	private String pincode;
@@ -58,6 +69,17 @@ public class Faculty {
 
 	@Column(name = "password")
 	private String password;
+
+	//  @OneToOne(mappedBy= "faculty")
+	  private User user;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public String getEmailId() {
 		return emailId;
@@ -83,11 +105,11 @@ public class Faculty {
 		this.facultyLastName = facultyLastName;
 	}
 
-	public int getFacultyContact() {
+	public String getFacultyContact() {
 		return facultyContact;
 	}
 
-	public void setFacultyContact(int facultyContact) {
+	public void setFacultyContact(String facultyContact) {
 		this.facultyContact = facultyContact;
 	}
 
@@ -155,6 +177,15 @@ public class Faculty {
 		this.state = state;
 	}
 
+	
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
 	public String getPincode() {
 		return pincode;
 	}
@@ -171,20 +202,31 @@ public class Faculty {
 		this.role = role;
 	}
 
+	
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 	public String getPassword() {
-		String encodedString = password;
+		/*String encodedString = password;
 		Base64.Decoder decoder = Base64.getDecoder();
 		byte[] decodedByteArray = decoder.decode(encodedString);
-		return (new String(decodedByteArray));
-		/* return password; */
+		return (new String(decodedByteArray));*/
+		 return password; 
 	}
 
 	public void setPassword(String password) {
-		Base64.Encoder encoder = Base64.getEncoder();
-		String normalString = password;
-		String encodedString = encoder.encodeToString(normalString.getBytes(StandardCharsets.UTF_8));
-		this.password = encodedString;
-		/* this.password = password; */
+		/*
+		 * Base64.Encoder encoder = Base64.getEncoder(); String normalString = password;
+		 * String encodedString =
+		 * encoder.encodeToString(normalString.getBytes(StandardCharsets.UTF_8));
+		 */
+		//this.password = encodedString;
+		 this.password = password; 
 	}
 	
 }

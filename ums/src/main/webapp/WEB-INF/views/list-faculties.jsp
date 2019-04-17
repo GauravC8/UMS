@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Spring 5 MVC</title>
+<title>Faculty</title>
 <link href="<c:url value="/resources/css/bootstrap.min.css" />"
 	rel="stylesheet">
 <script src="<c:url value="/resources/js/jquery-1.11.1.min.js" />"></script>
@@ -14,11 +14,11 @@
 <body>
 	<div class="container">
 		<div class="col-md-offset-1 col-md-10">
-			<h2>Student Registration</h2>
+			<h2>Faculty Registration</h2>
 			<hr />
 			<div class="panel panel-info">
 				<div class="panel-heading">
-					<div class="panel-title">Student List</div>
+					<div class="panel-title">Faculty List</div>
 				</div>
 				<div class="panel-body">
 					<table class="table table-striped table-bordered">
@@ -31,7 +31,7 @@
 							<th>Father Name</th>
 							<th>Mother Name</th>
 							<th>Date of Birth</th>
-							<th>Course Enrolled</th>
+							<th>Department</th>
 							<th>Address</th>
 							<th>City</th>
 							<th>State</th>
@@ -43,35 +43,35 @@
 						</tr>
 
 						<!-- loop over and print our customers -->
-						<c:forEach var="xStudent" items="${students}">
+						<c:forEach var="xFaculty" items="${faculties}">
 
 							<!-- construct an "update" link with customer id -->
-							<c:url var="updateLink" value="/student/updateForm">
-								<c:param name="emailId" value="${xStudent.emailId}" />
+							<c:url var="updateLink" value="/faculty/updateForm">
+								<c:param name="emailId" value="${xFaculty.emailId}" />
 							</c:url>
 
 							<!-- construct an "delete" link with customer id -->
-							<c:url var="deleteLink" value="/student/delete">
-								<c:param name="emailId" value="${xStudent.emailId}" />
+							<c:url var="deleteLink" value="/faculty/delete">
+								<c:param name="emailId" value="${xFaculty.emailId}" />
 							</c:url>
 
 							<tr>
-								<td>${xStudent.facultyFirstName}</td>
-								<td>${xStudent.facultyLastName}</td>
-								<td>${xStudent.facultyGender}</td>
-								<td>${xStudent.emailId}</td>
-								<td>${xStudent.facultyContact}</td>
-								<td>${xStudent.facultyFatherName}</td>
-								<td>${xStudent.facultyMotherName}</td>
-								<td>${xStudent.dob}</td>
-								<td>${xStudent.department}</td>
-								<td>${xStudent.address}</td>
-								<td>${xStudent.city}</td>
-								<td>${xStudent.state}</td>
-								<td>${xStudent.pincode}</td>
-								<td>${xStudent.country}</td>
-								<td>${xStudent.password}</td>
-								<td>${xStudent.role}</td>
+								<td>${xFaculty.facultyFirstName}</td>
+								<td>${xFaculty.facultyLastName}</td>
+								<td>${xFaculty.facultyGender}</td>
+								<td>${xFaculty.emailId}</td>
+								<td>${xFaculty.facultyContact}</td>
+								<td>${xFaculty.facultyFatherName}</td>
+								<td>${xFaculty.facultyMotherName}</td>
+								<td>${xFaculty.dob}</td>
+								<td>${xFaculty.department}</td>
+								<td>${xFaculty.address}</td>
+								<td>${xFaculty.city}</td>
+								<td>${xFaculty.state}</td>
+								<td>${xFaculty.pincode}</td>
+								<td>${xFaculty.country}</td>
+								<td>${xFaculty.password}</td>
+								<td>${xFaculty.role}</td>
 
 								<td>
 									<!-- display the update link --> <a href="${updateLink}">Update</a>

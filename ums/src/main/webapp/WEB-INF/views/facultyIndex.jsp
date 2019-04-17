@@ -81,25 +81,13 @@
 					<div class="collapse navbar-collapse" id="myNavbar">
 						<ul class="nav navbar-nav">
 							<li class="active"><a href="#">Home</a></li>
-							<li class="dropdown"><a class="dropdown-toggle"
-								data-toggle="dropdown" href="#">UMS Navigation <span
-									class="caret"></span></a>
-								<ul class="dropdown-menu">
-									<li><a href="#">My Profile</a></li>
-									<li><a href="#">Examination</a></li>
-									<li><a href="#">View Result</a></li>
-									<li><a href="#">View Attendance</a></li>
-									<li><a href="#">View Timetable</a></li>
-									<li><a href="#">Assignment Upload</a></li>
-									<li><a href="#">Assignment Download</a></li>
-									<li><a href="#">Online Survey</a></li>
-								</ul></li>
+							
 							<li><a href="#" data-toggle="modal" data-target="#myModal">Change
 									Password</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 
-							<li><a href="#"><span
+							<li><a href="/ums/user/logout"><span
 									class="glyphicon glyphicon-log-out"></span>Logout</a></li>
 						</ul>
 					</div>
@@ -157,31 +145,17 @@
 
 							</div>
 							<div class="col-sm-6 col-md-8">
-								<h4>${usr}</h4>
-								<small><cite title="San Francisco, USA">NIIT
-										Technologies , Delhi<i class="glyphicon glyphicon-map-marker">
+								<h3>FACULTY</h3>
+								<small><cite title="San Francisco, USA">Jubilant University
+										, Delhi<i class="glyphicon glyphicon-map-marker">
 									</i>
 								</cite></small>
-								<p>
-									<i class="glyphicon glyphicon-gift"></i>Jan 1, 1999
-								</p>
+								
 							</div>
 
 						</div>
 						<br>
-						<div class="form-group">
-							<label for="rollno">Roll No.:</label>
-							<p>Insert roll no</p>
-						</div>
-						<div class="form-group">
-							<label for="pgm">Program:</label>
-							<p>Insert program</p>
-						</div>
-
-						<div class="form-group">
-							<label for="scn">Section:</label>
-							<p>Insert roll no</p>
-						</div>
+						
 					</div>
 				</div>
 
@@ -195,31 +169,21 @@
 								</marquee>
 							<ul>
 								<li>18th March is declared as a holiday due to Good Friday!</li>
-								<li>Registrations for Under-18 Girls BasketBall Tournament
-									will start from 17th April'19!</li>
-								<li>From now, it is mandatory to maintain 80% attendance.</li>
+								<li>Workshop for Department of Science faculty will held on 25th April'2019!</li>
+								<li>Faculty has to upload FA-1 Result till 20th April'2019.</li>
 							</ul>
 							<br> <br>
 
 						</div>
 						<br> <br>
-						<button class="button">View TimeTable</button>
-						<br> <br> <br> <a href="facultyRegistration"
-							data-toggle="modal" data-target="#"><button class="button">Register
-								Faculty</button></a> <br> <br> <br>
-
+						<a href="/ums/timetable/list?role=f">	<button class="button"> View TimeTable</button></a>
+						<br> <br>
+	                    <a href="/ums/result/list?role=f">	<button class="button"> Add Result</button></a>
+						<br> <br>
 						<button class="button">
-							<a href="/ums/faculty/list">View Faculty Details</a>
+							<a href="/ums/faculty/list?facultyId= ${usr.facultyId}">View Faculty Details</a>
 						</button>
-						<!--Register Modal -->
-						<div class="modal fade" id="registerModel" role="dialog">
-							<div class="modal-dialog">
-
-								<!-- Modal content-->
-
-
-							</div>
-						</div>
+					
 
 
 

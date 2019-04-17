@@ -18,8 +18,6 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
-
 <script>
 	addEventListener("load", function() {
 		setTimeout(hideURLbar, 0);
@@ -81,26 +79,15 @@
 					<div class="collapse navbar-collapse" id="myNavbar">
 						<ul class="nav navbar-nav">
 							<li class="active"><a href="#">Home</a></li>
-							<li class="dropdown"><a class="dropdown-toggle"
-								data-toggle="dropdown" href="#">UMS Navigation <span
-									class="caret"></span></a>
-								<ul class="dropdown-menu">
-									<li><a href="#">My Profile</a></li>
-									<li><a href="#">Examination</a></li>
-									<li><a href="#">View Result</a></li>
-									<li><a href="#">View Attendance</a></li>
-									<li><a href="#">View Timetable</a></li>
-									<li><a href="#">Assignment Upload</a></li>
-									<li><a href="#">Assignment Download</a></li>
-									<li><a href="#">Online Survey</a></li>
-								</ul></li>
+						
 							<li><a href="#" data-toggle="modal" data-target="#myModal">Change
 									Password</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 
-							<li><a href="logout"><span
+							<li><a href="/ums/user/logout"><span
 									class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+								
 						</ul>
 					</div>
 
@@ -157,60 +144,50 @@
 
 							</div>
 							<div class="col-sm-6 col-md-8">
-								<h4>${usr}</h4>
-								<small><cite title="San Francisco, USA">NIIT
-										Technologies , Delhi<i class="glyphicon glyphicon-map-marker">
+								<h3>ADMIN</h3>
+								<small><cite title="San Francisco, USA">Jubliant
+										University,Delhi<i class="glyphicon glyphicon-map-marker">
 									</i>
 								</cite></small>
-								<p>
-									<i class="glyphicon glyphicon-gift"></i>Jan 1, 1999
-								</p>
+							
 							</div>
 
 						</div>
 						<br>
-						<div class="form-group">
-							<label for="rollno">Roll No.:</label>
-							<p>Insert roll no</p>
-						</div>
-						<div class="form-group">
-							<label for="pgm">Program:</label>
-							<p>Insert program</p>
-						</div>
-
-						<div class="form-group">
-							<label for="scn">Section:</label>
-							<p>Insert roll no</p>
-						</div>
+						
 					</div>
 				</div>
 
 
 				<div class="col-lg-9">
-					<div class="row">
-						<div class="col-sm-8">
+					<div class="row-lg-12">
+						<div class="col-sm-12">
 							<p>
 								<b> <marquee>!!Important Announcements!!</b>
 								</marquee>
 							<ul>
 								<li>18th March is declared as a holiday due to Good Friday!</li>
-								<li>Registrations for Under-18 Girls BasketBall Tournament
-									will start from 17th April'19!</li>
-								<li>From now, it is mandatory to maintain 80% attendance.</li>
+								
 							</ul>
-							<br> <br>
-
+						
+<br><br>
 						</div>
-						<br> <br>
-						<button class="button">View TimeTable</button>
-						<br> <br> <br> <a href="#" data-toggle="modal"
+						<a href="#" data-toggle="modal"
 							data-target="#registerModel"><button class="button">Register
-								Student</button></a> <br> <br> <br>
-
+								Student</button></a> 
+						<a href="#" data-toggle="modal"
+							data-target="#registerModel1"><button class="button">Register
+								Faculty</button></a>
+						
+						<a href="/ums/timetable/list?role=a"><button class="button">View TimeTable</a></button>
+						
 						<button class="button">
 							<a href="/ums/student/list">View Student Details</a>
 						</button>
-						<!--Register Modal -->
+						<a href="/ums/result/list?role=a">	<button class="button"> View Result</button></a>
+						<br><br>
+						<br><br>
+						<!--Student Register Modal -->
 						<div class="modal fade" id="registerModel" role="dialog">
 							<div class="modal-dialog">
 
@@ -374,8 +351,166 @@
 							</div>
 						</div>
 
+<!-- -----Faculty Registration -->
+						<div class="modal fade" id="registerModel1" role="dialog">
+							<div class="modal-dialog">
 
+								<!-- Modal content-->
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+										<h4 class="modal-title">Faculty Registration</h4>
+									</div>
+									<div class="modal-body">
+										<form action="/ums/faculty/saveFaculty" method="post"
+											modelAttribute="Faculty" data-toggle="validator">
+											<div class="form-group">
+												<label for="facultyFirstName" class="control-label">
+													First Name:</label> <input type="text" class="form-control"
+													id="facultyFirstName" name="facultyFirstName"
+													placeholder="First Name" data-error="Enter First Name"
+													required>
+												<div class="help-block with-errors"></div>
+											</div>
+											<div class="form-group">
+												<label for="facultyLastName" class="control-label">
+													Last Name:</label> <input type="text" class="form-control"
+													id="facultyLastName" name="facultyLastName"
+													placeholder="Last Name" data-error="Enter Last Name"
+													required>
+												<div class="help-block with-errors"></div>
+											</div>
+											<div class="form-group w3ls-opt">
+												<label for="facultyGender" class="control-label">Gender</label>
+												<label class="w3layouts"> <input type="radio"
+													name="facultyGender" id="facultyGender"
+													name="facultyGender" value="male" checked>Male
+												</label> <label class="w3layouts label2"> <input
+													type="radio" name="facultyGender" id="facultyGender"
+													name="facultyGender" value="female">Female
+												</label>
+											</div>
+											<div class="form-group">
+												<label for="emailId" class="control-label">Email:</label> <input
+													type="email" class="form-control" id="emailId"
+													name="emailId" placeholder="Email"
+													data-error="This email address is invalid" required>
+												<div class="help-block with-errors"></div>
+											</div>
+											<div class="form-group">
+												<label for="facultyContact" class="control-label">studentContact:</label>
+												<input type="text" class="form-control" id="facultyContact"
+													name="facultyContact" placeholder="facultyContact"
+													data-error="Enter Phone Number" required>
+												<div class="help-block with-errors"></div>
+											</div>
+											<div class="form-group">
+												<label for="facultyFatherName" class="control-label">Father's
+													Name:</label> <input type="text" class="form-control"
+													id="facultyFatherName" name="facultyFatherName"
+													placeholder="Father's Name"
+													data-error="Enter Father's Name" required>
+												<div class="help-block with-errors"></div>
+											</div>
+											<div class="form-group">
+												<label for="facultyMotherName" class="control-label">Mother's
+													Name:</label> <input type="text" class="form-control"
+													id="facultyMotherName" name="facultyMotherName"
+													placeholder="Mother's Name"
+													data-error="Enter Mother's Name" required>
+												<div class="help-block with-errors"></div>
+											</div>
+											<div class="form-group">
+												<label for="dob" class="control-label">Date of
+													Birth:</label> <input type="date" class="form-control" id="dob"
+													name="dob" placeholder="date"
+													data-error="Enter Date of Birth" required>
+												<div class="help-block with-errors"></div>
+											</div>
+											<div class="form-group">
+												<label class="control-label" for="department">Select
+													Department:</label> 
+								
+													<select class="form-control" id="department"
+														name="department">
+														<option>B.B.A</option>
+														<option>B.C.A</option>
+														<option>B.Com</option>
+														<option>B.Tech</option>
+														<option>M.B.A</option>
+														<option>M.C.A</option>
+														<option>M.Com</option>
+														<option>M.Tech</option>
+													</select>
+												
+											
+											</div>
+											<div class="form-group">
+												<label for="address">Address:</label>
+												<textarea class="form-control" rows="3" id="address" name=""></textarea>
+											</div>
+											<div class="form-group">
+												<div class="col-md-6 mb-3">
+													<label for="city" class="control-label">City:</label> <input
+														type="text" class="form-control" id="city" name="city"
+														placeholder="City" data-error="Enter correct city"
+														required>
+													<div class="help-block with-errors"></div>
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="col-md-6 mb-3">
+													<label for="state" class="control-label">State:</label> <input
+														type="text" class="form-control" id="state" name="state"
+														placeholder="State" data-error="Enter correct state"
+														required>
+													<div class="help-block with-errors"></div>
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="col-md-6 mb-3">
+													<label for="pincode" class="control-label">PinCode:</label>
+													<input type="text" class="form-control" id="pincode"
+														name="pincode" placeholder="PinCode"
+														data-error="Enter correct pincode" required>
+													<div class="help-block with-errors"></div>
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="col-md-6 mb-3">
+													<label for="country" class="control-label">Country
+														:</label> <input type="text" class="form-control" id="country"
+														name="country" placeholder="Country" required>
+													<div class="help-block with-errors"></div>
+												</div>
+											</div>
 
+											<div class="form-group">
+												<label for="password" class="control-label">Password:</label>
+												<div class="form-inline row">
+													<div class="form-group col-sm-6 agileits-w3layouts">
+														<input type="password" data-minlength="6"
+															class="form-control" id="password" name="password"
+															placeholder="Password" required>
+														<div class="help-block">Minimum of 6 characters</div>
+													</div>
+													
+												</div>
+											</div>
+
+											<div class="form-group">
+												<button type="submit" class="btn btn-lg">submit</button>
+											</div>
+										</form>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default"
+											data-dismiss="modal">Close</button>
+									</div>
+								</div>
+
+							</div>
+						</div>
 
 
 					</div>

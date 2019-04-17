@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.niit.app.model.Faculty;
+import com.niit.app.model.User;
 
 @Repository
 public class FacultyDAOImplimentation implements FacultyDAO {
@@ -40,7 +41,15 @@ public class FacultyDAOImplimentation implements FacultyDAO {
 	@Override
 	public void saveFaculty(Faculty faculty) {
 		Session currentSession = sessionFactory.getCurrentSession();
+		 User user = new User(); 
+		// user.setFaculty(faculty);
+		 user.setEmailId(faculty.getEmailId());
+		 user.setPassword(faculty.getPassword());
+		 user.setRole(faculty.getRole());
+		 faculty.setUser(user);
+		System.out.println("saveFaculty::::"+faculty);
 		currentSession.saveOrUpdate(faculty);
+		currentSession.saveOrUpdate(user);
 	}
 
 	@Override

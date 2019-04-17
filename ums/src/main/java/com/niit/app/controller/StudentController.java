@@ -1,5 +1,6 @@
 package com.niit.app.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +24,19 @@ public class StudentController {
 	
 	@GetMapping("/list")
 	public String listStudents(Model theModel) {
+		System.out.println("in listy");
 		List<Student> student = studentService.getStudents();
 		theModel.addAttribute("students", student);
+		return "list-students";
+	}
+	
+	@RequestMapping(value="/showStudent", method = RequestMethod.GET)
+	public String getStudent(@RequestParam("studentId")int studentId, Model theModel) {
+		System.out.println("getStudent:"+studentId);
+	    Student student = studentService.showStudent(studentId);
+	    List<Student> student1 = new ArrayList<Student>();
+	    student1.add(student);
+		theModel.addAttribute("students", student1);
 		return "list-students";
 	}
 	
@@ -32,26 +44,28 @@ public class StudentController {
 	public String showFormForAdd(Model theModel) {
 		Student student = new Student();
 		theModel.addAttribute("student", student);
-		return "";
+		return "list";
 	}
 	
 	@RequestMapping(value="/saveStudent",method = RequestMethod.POST)
-	public String saveCustomer(@ModelAttribute("student") Student student) {
+	public String saveStudent(@ModelAttribute("student") Student student) {
 		studentService.saveStudent(student);	
 		return "redirect:/student/list";
 	}
 	
 	@GetMapping("/updateForm")
-	public String showFormForUpdate(@RequestParam("emailId") String emailId,
+	public String showFormForUpdate(@RequestParam("id")int id,
 									Model theModel) {
-		Student student = studentService.getStudent(emailId);	
-		theModel.addAttribute("student", student);
+		System.out.println("showFormForUpdate:"+id);
+		Student student = studentService.showStudent(id);	
+		System.out.println("getStudent:"+student);
+		theModel.addAttribute("Student", student);
 		return "studentRegistration";
 	}
 	
 	@GetMapping("/delete")
-	public String deleteCustomer(@RequestParam("emailId") String emailId) {
-		studentService.deleteStudent(emailId);
-		return "redirect:/student/list";
+	public String deleteCustomer(@RequestParam("id") int id) {
+		 studentService.deleteStudent(id);
+		return "redirect:list";
 	}
 }

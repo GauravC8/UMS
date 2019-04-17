@@ -1,5 +1,6 @@
 package com.niit.app.model;
 
+import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
 import java.sql.Date;
 import java.util.Base64;
@@ -7,6 +8,8 @@ import java.util.Base64;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -14,9 +17,15 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "student")
-public class Student {
+public class Student implements Serializable {
+
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	@Column(name = "id")
+	private int id;
+	
+	
 	@Column(name = "emailId", unique = true, columnDefinition = "VARCHAR(64)")
 	private String emailId;
 
@@ -59,7 +68,6 @@ public class Student {
 	@Column(name = "role")
 	private char role;
 
-	
 
 	@Column(name = "country")
 	private String country;
@@ -67,10 +75,19 @@ public class Student {
 	@Column(name = "password")
 	private String password;
 	
-	/*------------------------------------------------------------*/
-	@OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(unique = true)
+   //@OneToOne(mappedBy= "student")
     private User user;
+   
+   //@OneToOne(mappedBy= "student")
+  // private Assignment assignment;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public String getEmailId() {
 		return emailId;
@@ -192,20 +209,53 @@ public class Student {
 		this.country = country;
 	}
 
+	
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 	public String getPassword() {
-		String encodedString = password;
-		Base64.Decoder decoder = Base64.getDecoder();
-		byte[] decodedByteArray = decoder.decode(encodedString);
-		return (new String(decodedByteArray));
-		/* return password; */
+		/*
+		 * String encodedString = password; Base64.Decoder decoder =
+		 * Base64.getDecoder(); byte[] decodedByteArray = decoder.decode(encodedString);
+		 * return (new String(decodedByteArray));
+		 */
+		 return password; 
 	}
 
 	public void setPassword(String password) {
-		Base64.Encoder encoder = Base64.getEncoder();
-		String normalString = password;
-		String encodedString = encoder.encodeToString(normalString.getBytes(StandardCharsets.UTF_8));
-		this.password = encodedString;
+		/*
+		 * Base64.Encoder encoder = Base64.getEncoder(); String normalString = password;
+		 * String encodedString =
+		 * encoder.encodeToString(normalString.getBytes(StandardCharsets.UTF_8));
+		 * this.password = encodedString;
+		 */
 		this.password = password;
 	}
+	
+	
 
+	/*
+	 * public Assignment getAssignment() { return assignment; }
+	 * 
+	 * public void setAssignment(Assignment assignment) { this.assignment =
+	 * assignment; }
+	 */
+
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", emailId=" + emailId + ", studentFirstName=" + studentFirstName
+				+ ", studentLastName=" + studentLastName + ", studentContact=" + studentContact + ", studentGender="
+				+ studentGender + ", studentMotherName=" + studentMotherName + ", studentFatherName="
+				+ studentFatherName + ", dob=" + dob + ", studentCourseEnroll=" + studentCourseEnroll + ", address="
+				+ address + ", city=" + city + ", state=" + state + ", pincode=" + pincode + ", role=" + role
+				+ ", country=" + country + ", password=" + password + ", user=" + user + "]";
+	}
+
+	
+	
 }

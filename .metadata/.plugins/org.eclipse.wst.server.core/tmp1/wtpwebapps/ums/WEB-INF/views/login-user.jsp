@@ -14,6 +14,8 @@
 
 </head>
 <body>
+<%-- <%=session.getAttribute("emailId")%> --%>
+
 	<div class="container">
 		<div class="col-md-offset-2 col-md-7">
 			<h2 class="text-center">Login</h2>
@@ -53,5 +55,6 @@
 		</div>
 	</div>
 	<div style="color: red">${error}</div>
+	
 </body>
 </html>

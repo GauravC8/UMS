@@ -23,6 +23,13 @@ public class StudentServiceImplimentation implements StudentService {
 
 	@Override
 	@Transactional
+	public Student showStudent(int studentId) {
+		return studentDAO.showStudent( studentId);
+	}
+
+	
+	@Override
+	@Transactional
 	public void saveStudent(Student student) {
 		studentDAO.saveStudent(student);
 	}
@@ -35,7 +42,7 @@ public class StudentServiceImplimentation implements StudentService {
 
 	@Override
 	@Transactional
-	public void deleteStudent(String emailId) {
-		studentDAO.deleteStudent(emailId);
+	public void deleteStudent(int id) {
+		studentDAO.deleteStudent(id);
 	}
 }

@@ -75,17 +75,17 @@ input[type=submit]:hover {
 
 
 	<div class="container">
-		<form action="#">
+		<form action="list/showForm">
 
 			<div class="row">
 				<div class="col-25">
-					<label for="studentFirstName" class="control-label"> First
+					<label for="facultyFirstName" class="control-label"> First
 						Name:</label>
 				</div>
 
 				<div class="col-75">
-					<input type="text" class="form-control" id="studentFirstName"
-						name="studentFirstName" placeholder="First Name"
+					<input type="text" class="form-control" id="facultyFirstName"
+						name="facultyFirstName" placeholder="First Name"
 						data-error="Enter First Name" required>
 					<div class="help-block with-errors"></div>
 				</div>
@@ -97,8 +97,8 @@ input[type=submit]:hover {
 				</div>
 
 				<div class="col-75">
-					<input type="text" class="form-control" id="studentLastName"
-						name="studentLastName" placeholder="Last Name"
+					<input type="text" class="form-control" id="facultyLastName"
+						name="facultyLastName" placeholder="Last Name"
 						data-error="Enter Last Name" required>
 					<div class="help-block with-errors"></div>
 				</div>
@@ -113,10 +113,10 @@ input[type=submit]:hover {
 				<div class="col-75">
 
 					<label class="w3layouts"> <input type="radio"
-						name="studentGender" id="studentGender" name="studentGender"
+						name="facultyGender" id="facultyGender" name="facultyGender"
 						value="male" checked>Male
 					</label> <label class="w3layouts label2"> <input type="radio"
-						name="studentGender" id="studentGender" name="studentGender"
+						name="facultyGender" id="facultyGender" name="facultyGender"
 						value="female">Female
 					</label>
 				</div>
@@ -140,12 +140,12 @@ input[type=submit]:hover {
 
 			<div class="row">
 				<div class="col-25">
-					<label for="studentContact" class="control-label">StudentContact:</label>
+					<label for="facultyContact" class="control-label">FacultyContact:</label>
 				</div>
 
 				<div class="col-75">
-					<input type="text" class="form-control" id="StudentContact"
-						name="StudentContact" placeholder="StudentContact"
+					<input type="text" class="form-control" id="facultyContact"
+						name="facultyContact" placeholder="facultyContact"
 						data-error="Enter Phone Number" required>
 					<div class="help-block with-errors"></div>
 				</div>
@@ -155,26 +155,26 @@ input[type=submit]:hover {
 
 			<div class="row">
 				<div class="col-25">
-					<label for="studentFatherName" class="control-label">Father's
+					<label for="facultyFatherName" class="control-label">Father's
 						Name:</label>
 				</div>
 
 				<div class="col-75">
-					<input type="text" class="form-control" id="studentFatherName"
-						name="studentFatherName" placeholder="Father's Name"
+					<input type="text" class="form-control" id="facultyFatherName"
+						name="facultyFatherName" placeholder="Father's Name"
 						data-error="Enter Father's Name" required>
 					<div class="help-block with-errors"></div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-25">
-					<label for="studentMotherName" class="control-label">Mother's
+					<label for="facultyMotherName" class="control-label">Mother's
 						Name:</label>
 				</div>
 
 				<div class="col-75">
-					<input type="text" class="form-control" id="studentMotherName"
-						name="studentMotherName" placeholder="Mother's Name"
+					<input type="text" class="form-control" id="facultyMotherName"
+						name="facultyMotherName" placeholder="Mother's Name"
 						data-error="Enter Mother's Name" required>
 					<div class="help-block with-errors"></div>
 				</div>
@@ -206,14 +206,14 @@ input[type=submit]:hover {
 
 			<div class="row">
 				<div class="col-25">
-					<label class="control-label" for="studentCourseEnroll">Select
-						Course Enrolled in:</label>
+					<label class="control-label" for="department">Select
+						Department:</label>
 				</div>
 
 				<div class="col-75">
 
-					<select class="form-control" id="studentCourseEnroll"
-						name="studentCourseEnroll">
+					<select class="form-control" id="department"
+						name="department">
 						<option>B.B.A</option>
 						<option>B.C.A</option>
 						<option>B.Com</option>

@@ -1,15 +1,17 @@
 package com.niit.app.dao;
 
-import javax.persistence.Query;
+
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.niit.app.model.Student;
 import com.niit.app.model.User;
 
 @Repository
@@ -23,6 +25,7 @@ public class UserDAOImpl implements UserDAO {
 		User usr=null;
 		Session session=null;
 		try {
+			System.out.println("check user theUser::"+theUser);
 		 session = sessionFactory.getCurrentSession();
 		CriteriaBuilder cb = session.getCriteriaBuilder();
 		CriteriaQuery<User> cq = cb.createQuery(User.class);
@@ -31,11 +34,11 @@ public class UserDAOImpl implements UserDAO {
 				cb.equal(root.get("emailId"), theUser.getEmailId())),	
 				cb.equal(root.get("password"),theUser.getPassword())
 			);
-		
-		Query query = session.createQuery(cq);
+		System.out.println("check user cq::"+cq);
+		Query<User> query = session.createQuery(cq);
 		query.setMaxResults(1);
 		usr=(User) query.getSingleResult();
-		
+		System.out.println("check user before returning::"+usr);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -45,6 +48,15 @@ public class UserDAOImpl implements UserDAO {
 		}
 		
 		return usr;
+	}
+	
+	
+	@Override
+	public Student showStudent(int studentId) {
+		System.out.println("showStudent:"+studentId);
+		Session currentSession = sessionFactory.getCurrentSession();
+		Student theCustomer = currentSession.get(Student.class, studentId);
+		return theCustomer;
 	}
 
 }
