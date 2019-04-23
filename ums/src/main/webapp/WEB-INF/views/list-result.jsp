@@ -11,7 +11,7 @@
 <script src="<c:url value="/resources/js/jquery-1.11.1.min.js" />"></script>
 <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 </head>
-------------------------------------------------------------------------------<body background="<c:url value="/resources/images/back.jfif"/>"/>
+<body background="<c:url value="/resources/images/back.jfif"/>"/>
 	<div class="container">
 		<div class="col-md-offset-1 col-md-10">
 			<h2>RESULT SHEET</h2>
